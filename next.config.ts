@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       { source: "/nl", destination: "/", permanent: true },
       { source: "/nl/", destination: "/", permanent: true },
 
-      // Old WP slug redirects (from sc-redirects.php)
+      // Old WP slug redirects
       { source: "/hello-world", destination: "/", permanent: true },
       { source: "/category/:path*", destination: "/nl/blog", permanent: true },
       { source: "/tag/:path*", destination: "/nl/blog", permanent: true },
@@ -40,7 +40,6 @@ const nextConfig: NextConfig = {
       { source: "/en/trainers", destination: "/en/find-personal-trainer", permanent: true },
 
       // Old WP page slugs → new paths
-      { source: "/nl/vind-jouw-personal-trainer/", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
       { source: "/nl/training-studio-huren-amsterdam", destination: "/nl/studio-huren", permanent: true },
       { source: "/en/rent-training-studio-amsterdam", destination: "/en/studio-rental", permanent: true },
       { source: "/nl/hoe-het-studio-huren-sculptclub-werkt", destination: "/nl/studio-huren", permanent: true },
@@ -52,9 +51,6 @@ const nextConfig: NextConfig = {
       // Utility pages
       { source: "/acuity/:path*", destination: "/nl/boek", permanent: true },
       { source: "/coming-soon", destination: "/", permanent: true },
-      { source: "/sitemap", destination: "/sitemap.xml", permanent: true },
-
-      // PT Jordaan landing (old blog post as page)
       { source: "/pt-jordaan", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
       { source: "/nl/pt-jordaan", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
     ];
