@@ -1,90 +1,83 @@
 /**
- * All Acuity Scheduling links used across the site.
- * IMPORTANT: Every booking button must use one of these links.
- * Owner ID: 36720238 (from live sculptclub.nl)
+ * All Acuity Scheduling links — exact match with live sculptclub.nl
+ * Owner ID: 36720238
+ * Schedule slug: fba376d5
  */
 
-import type { Locale } from "./site";
-
-const ACUITY_BASE = "https://app.acuityscheduling.com/schedule.php";
-const ACUITY_CATALOG = "https://app.acuityscheduling.com/catalog.php";
+const SCHEDULE = "https://app.acuityscheduling.com/schedule.php";
+const CATALOG = "https://app.acuityscheduling.com/catalog.php";
 const OWNER = "36720238";
 
+// ─── Single Session Booking (schedule.php) ───────────────────────
 export const acuityLinks = {
-  /** Main scheduler — all appointment types */
-  schedule: `${ACUITY_BASE}?owner=${OWNER}`,
-
-  /** Specific appointment types from the live site */
-  appointments: {
-    type1: `${ACUITY_BASE}?owner=${OWNER}&appointmentType=84032351`,
-    type2: `${ACUITY_BASE}?owner=${OWNER}&appointmentType=86677323`,
-    type3: `${ACUITY_BASE}?owner=${OWNER}&appointmentType=82553655`,
-    type4: `${ACUITY_BASE}?owner=${OWNER}&appointmentType=85410115`,
-  },
-
-  /** Open Gym — existing members book a session */
-  openGymBook: `${ACUITY_BASE}?owner=${OWNER}&appointmentType=83513953`,
-
-  /** Open Gym — new members buy a plan (catalog) */
+  /** Studio Rental — Half Studio 60 min (€12) */
+  halfStudio60: `${SCHEDULE}?owner=${OWNER}&appointmentType=84032351`,
+  /** Studio Rental — Half Studio 90 min (€17) */
+  halfStudio90: `${SCHEDULE}?owner=${OWNER}&appointmentType=86677323`,
+  /** Studio Rental — Full Studio 60 min (€17) */
+  fullStudio60: `${SCHEDULE}?owner=${OWNER}&appointmentType=82553655`,
+  /** Studio Rental — Full Studio 90 min (€24) */
+  fullStudio90: `${SCHEDULE}?owner=${OWNER}&appointmentType=85410115`,
+  /** Open Gym — book a session (existing members) */
+  openGymBook: `${SCHEDULE}?owner=${OWNER}&appointmentType=83513953`,
+  /** Free try-out — Open Gym */
+  openGymTrial: `${SCHEDULE}?owner=${OWNER}&appointmentType=87017445`,
+  /** Free try-out — Studio Rental */
+  studioTrial: `https://app.acuityscheduling.com/schedule/fba376d5/appointment/86758291/calendar/12633534?appointmentTypeIds[]=86758291`,
+  /** Generic scheduler (used by pages that don't target a specific appointment type) */
+  generic: `${SCHEDULE}?owner=${OWNER}`,
+  /** Aliases for Open Gym plans (used across pages) */
   openGymPlans: {
-    instapplan: `${ACUITY_CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155887`,
-    populair: `${ACUITY_CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155889`,
-    intensief: `${ACUITY_CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155891`,
-    onbeperkt: `${ACUITY_CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155893`,
+    instapplan: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155887`,
+    populair: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155888`,
+    intensief: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155889`,
+    onbeperkt: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155890`,
   },
-
-  /** Studio rental packages (catalog) */
-  studioPackages: {
-    starter: `${ACUITY_CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2167201`,
-    routine: `${ACUITY_CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2167203`,
-    volume: `${ACUITY_CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2167205`,
-  },
-
-  /** Generic booking link */
-  generic: `${ACUITY_BASE}?owner=${OWNER}`,
 } as const;
 
-/** WhatsApp links with pre-filled messages */
-export const whatsappLinks = {
-  generic: "https://wa.me/31683178934",
-  trainerIntake: (trainerName: string, locale: "nl" | "en") =>
-    locale === "nl"
-      ? `https://wa.me/31683178934?text=${encodeURIComponent(`Hoi! Ik wil graag een gratis intake boeken bij ${trainerName} van SculptClub`)}`
-      : `https://wa.me/31683178934?text=${encodeURIComponent(`Hi! I'd like to book a free intro with ${trainerName} at SculptClub`)}`,
-  openGym: (locale: "nl" | "en") =>
-    locale === "nl"
-      ? `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik wil graag meer weten over Open Gym bij SculptClub")}`
-      : `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'd like to know more about Open Gym at SculptClub")}`,
-  studioRental: (locale: "nl" | "en") =>
-    locale === "nl"
-      ? `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik wil graag de studio huren bij SculptClub")}`
-      : `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'd like to rent the studio at SculptClub")}`,
-} as const;
-
-/** CTA button configs for different contexts */
-export const ctaButtons = {
-  hero: {
-    nl: {
-      primary: { label: "Boek Gratis Proefles", href: acuityLinks.generic },
-      secondary: { label: "Ontdek Open Gym", href: "/nl/open-gym" },
-    },
-    en: {
-      primary: { label: "Book Free Trial", href: acuityLinks.generic },
-      secondary: { label: "Discover Open Gym", href: "/en/open-gym" },
-    },
+// ─── Package Purchases (catalog.php) ─────────────────────────────
+export const acuityPackages = {
+  /** Studio rental discount packs */
+  studio: {
+    starter: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2149357`,
+    routine: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2149358`,
+    volume: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2149360`,
   },
+  /** Open Gym membership plans */
   openGym: {
-    nl: {
-      book: { label: "Boek Open Gym Sessie", href: acuityLinks.openGymBook },
-      plans: { label: "Koop een Plan", href: acuityLinks.openGymPlans.populair },
-    },
-    en: {
-      book: { label: "Book Open Gym Session", href: acuityLinks.openGymBook },
-      plans: { label: "Buy a Plan", href: acuityLinks.openGymPlans.populair },
-    },
+    once: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155887`,
+    twice: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155888`,
+    thrice: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155889`,
+    unlimited: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155890`,
   },
-  studioRental: {
-    nl: { label: "Huur de Studio", href: acuityLinks.generic },
-    en: { label: "Rent the Studio", href: acuityLinks.generic },
+  /** Open Gym "Train Together" duo plans (EN only on old site) */
+  openGymDuo: {
+    once: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2160074`,
+    twice: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2160077`,
   },
+} as const;
+
+// ─── WhatsApp Links ──────────────────────────────────────────────
+export const whatsappLinks = {
+  /** Generic question */
+  nl: `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik heb een vraag over SculptClub")}`,
+  en: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I have a question about SculptClub")}`,
+  /** Open Gym interest */
+  openGymNl: `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik heb interesse in Open Gym bij SculptClub")}`,
+  openGymEn: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm interested in Open Gym at SculptClub")}`,
+  /** Studio rental interest */
+  studioNl: `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik wil graag meer weten over studio huren bij SculptClub")}`,
+  studioEn: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'd like to know more about renting the studio at SculptClub")}`,
+  /** Trainer intake — per trainer */
+  trainerIntake: (name: string, locale: "nl" | "en") =>
+    locale === "nl"
+      ? `https://wa.me/31683178934?text=${encodeURIComponent(`Hoi! Ik wil graag een gratis intake boeken bij ${name} van SculptClub`)}`
+      : `https://wa.me/31683178934?text=${encodeURIComponent(`Hi! I'd like to book a free intro with ${name} at SculptClub`)}`,
+  /** Generic (no pre-filled text) */
+  generic: "https://wa.me/31683178934",
+  /** Bank transfer for Volume pack */
+  bankTransferNl: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! Ik wil graag het Volume pakket (€549) kopen en betalen via bankoverschrijving. Mijn naam:")}`,
+  bankTransferEn: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'd like to order the Volume pack (€549) and pay via bank transfer. My name:")}`,
+  /** Dara has her own WhatsApp number */
+  dara: "https://wa.me/31645658213",
 } as const;
