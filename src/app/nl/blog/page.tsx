@@ -53,6 +53,22 @@ const posts = [
     href: "/nl/blog/open-gym-vs-sportschool",
     date: "24 maart 2026",
   },
+  {
+    title: "Wat kost personal training in Amsterdam?",
+    excerpt:
+      "Ontdek de gemiddelde prijzen, wat de kosten bepaalt en waarom een boutique studio uitstekende waarde biedt vanaf €60 per sessie.",
+    category: "Personal Training",
+    href: "/nl/blog/wat-kost-personal-training-amsterdam",
+    date: "24 maart 2026",
+  },
+  {
+    title: "Eerste keer naar de sportschool: 7 tips",
+    excerpt:
+      "Zenuwachtig voor je eerste bezoek? Deze 7 praktische tips helpen je om zelfverzekerd binnen te stappen en een goede start te maken.",
+    category: "Beginners",
+    href: "/nl/blog/eerste-keer-sportschool-tips",
+    date: "24 maart 2026",
+  },
 ];
 
 export default function BlogPageNL() {

@@ -30,6 +30,8 @@ const nlPages = [
   "/nl/blog/personal-training-amsterdam-jordaan",
   "/nl/blog/krachttraining-voor-beginners",
   "/nl/blog/open-gym-vs-sportschool",
+  "/nl/blog/wat-kost-personal-training-amsterdam",
+  "/nl/blog/eerste-keer-sportschool-tips",
 ];
 
 const enPages = [
@@ -60,6 +62,8 @@ const enPages = [
   "/en/blog/personal-training-amsterdam-jordaan",
   "/en/blog/strength-training-beginners-guide",
   "/en/blog/open-gym-vs-regular-gym",
+  "/en/blog/personal-training-cost-amsterdam",
+  "/en/blog/first-time-gym-tips",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

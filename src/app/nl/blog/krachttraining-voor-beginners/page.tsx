@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -59,6 +60,17 @@ export default function BlogPostNL2() {
                   24 maart 2026
                 </span>
               </div>
+            </div>
+
+            {/* Hero image */}
+            <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-10">
+              <Image
+                src="/images/studio/power-rack.jpeg"
+                alt="Power rack in de SculptClub studio"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
 
             <div className="prose prose-lg max-w-none">

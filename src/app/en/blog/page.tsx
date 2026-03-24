@@ -53,6 +53,22 @@ const posts = [
     href: "/en/blog/open-gym-vs-regular-gym",
     date: "March 24, 2026",
   },
+  {
+    title: "How Much Does Personal Training Cost in Amsterdam?",
+    excerpt:
+      "Discover average prices, what affects the cost, and why a boutique studio offers great value from €60 per session.",
+    category: "Personal Training",
+    href: "/en/blog/personal-training-cost-amsterdam",
+    date: "March 24, 2026",
+  },
+  {
+    title: "First Time at the Gym: 7 Tips for Beginners",
+    excerpt:
+      "Nervous about your first gym visit? These 7 practical tips will help you walk in with confidence and get a great start.",
+    category: "Beginners",
+    href: "/en/blog/first-time-gym-tips",
+    date: "March 24, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
