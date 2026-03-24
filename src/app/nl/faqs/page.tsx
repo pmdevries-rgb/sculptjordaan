@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
+import { FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -132,9 +133,14 @@ const categoryOffsets = faqCategories.reduce<number[]>((acc, cat, i) => {
   return acc;
 }, []);
 
+const allFaqs = faqCategories.flatMap((cat) =>
+  cat.items.map((item) => ({ question: item.q, answer: item.a }))
+);
+
 export default function FaqsPageNL() {
   return (
     <PageLayout>
+      <FaqJsonLd faqs={allFaqs} />
       <Section>
         <SectionHeader
           overline="Veelgestelde vragen"

@@ -4,6 +4,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
+import { ReviewsJsonLd } from "@/components/seo/json-ld";
 import { Star, ArrowRight, MessageCircle, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -93,9 +94,17 @@ function GoogleIcon() {
   );
 }
 
+const reviewsJsonLdData = reviews.map((r) => ({
+  name: r.name,
+  text: r.text,
+  rating: r.rating,
+  date: r.date.replace(/feb 2026/i, "2026-02-01").replace(/okt 2025/i, "2025-10-01").replace(/aug 2025/i, "2025-08-01"),
+}));
+
 export default function ReviewsPageNL() {
   return (
     <PageLayout>
+      <ReviewsJsonLd reviews={reviewsJsonLdData} />
       <Section>
         <SectionHeader
           overline="Google Reviews"

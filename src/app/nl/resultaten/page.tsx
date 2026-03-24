@@ -4,6 +4,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
+import { ReviewsJsonLd } from "@/components/seo/json-ld";
 import {
   ArrowRight,
   TrendingUp,
@@ -57,9 +58,17 @@ const results = [
   },
 ];
 
+const reviewsJsonLdData = results.map((r) => ({
+  name: r.name,
+  text: r.quote,
+  rating: 5,
+  date: "2026-01-01",
+}));
+
 export default function ResultsPageNL() {
   return (
     <PageLayout>
+      <ReviewsJsonLd reviews={reviewsJsonLdData} />
       <Section>
         <SectionHeader
           overline="Resultaten"

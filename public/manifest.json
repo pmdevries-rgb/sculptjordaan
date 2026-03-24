@@ -1,0 +1,16 @@
+{
+  "name": "SculptClub",
+  "short_name": "SculptClub",
+  "description": "Boutique Personal Training — Amsterdam Jordaan",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#134DE1",
+  "background_color": "#FAF8F5",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

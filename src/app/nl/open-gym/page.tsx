@@ -17,6 +17,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { acuityLinks } from "@/config/acuity";
+import { FaqJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -134,9 +135,12 @@ const faqs = [
   },
 ];
 
+const faqJsonLdData = faqs.map((f) => ({ question: f.q, answer: f.a }));
+
 export default function OpenGymPageNL() {
   return (
     <PageLayout>
+      <FaqJsonLd faqs={faqJsonLdData} />
       {/* Hero */}
       <Section>
         <SectionHeader

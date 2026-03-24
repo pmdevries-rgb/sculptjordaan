@@ -23,6 +23,10 @@ export const metadata: Metadata = {
       en: "/en/blog",
     },
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const posts = [
