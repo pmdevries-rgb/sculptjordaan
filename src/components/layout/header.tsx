@@ -4,11 +4,66 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Globe, CalendarCheck } from "lucide-react";
+import { Menu, X, Globe, CalendarCheck, Users, Dumbbell, Building2, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { mainNav, secondaryNav } from "@/config/navigation";
 import { getLocaleFromPath, getAlternatePath, getAlternateLocale } from "@/lib/locale";
 import { cn } from "@/lib/utils";
+
+const bookingMenu = {
+  nl: {
+    label: "Boek",
+    categories: [
+      {
+        icon: Users,
+        title: "Personal Trainer",
+        description: "Gratis kennismakingsgesprek",
+        href: "/nl/vind-jouw-personal-trainer",
+        accent: "text-blue-600 bg-blue-50",
+      },
+      {
+        icon: Dumbbell,
+        title: "Open Gym",
+        description: "Boek sessie of kies een plan",
+        href: "/nl/open-gym",
+        accent: "text-emerald-600 bg-emerald-50",
+      },
+      {
+        icon: Building2,
+        title: "Studio Huren",
+        description: "Boek per uur of koop een pakket",
+        href: "/nl/studio-huren",
+        accent: "text-purple-600 bg-purple-50",
+      },
+    ],
+  },
+  en: {
+    label: "Book",
+    categories: [
+      {
+        icon: Users,
+        title: "Personal Trainer",
+        description: "Free consultation",
+        href: "/en/find-personal-trainer",
+        accent: "text-blue-600 bg-blue-50",
+      },
+      {
+        icon: Dumbbell,
+        title: "Open Gym",
+        description: "Book a session or pick a plan",
+        href: "/en/open-gym",
+        accent: "text-emerald-600 bg-emerald-50",
+      },
+      {
+        icon: Building2,
+        title: "Studio Rental",
+        description: "Book by the hour or buy a pack",
+        href: "/en/studio-rental",
+        accent: "text-purple-600 bg-purple-50",
+      },
+    ],
+  },
+} as const;
 
 export function Header() {
   const pathname = usePathname();
@@ -16,26 +71,40 @@ export function Header() {
   const altLocale = getAlternateLocale(locale);
   const altPath = getAlternatePath(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [bookOpen, setBookOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const navItems = mainNav[locale];
   const moreItems = secondaryNav[locale];
+  const booking = bookingMenu[locale];
 
-  // Close menu when clicking outside
+  // Close menus when clicking outside
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setMenuOpen(false);
+        setBookOpen(false);
       }
     }
-    if (menuOpen) document.addEventListener("mousedown", handleClickOutside);
+    if (menuOpen || bookOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [menuOpen]);
+  }, [menuOpen, bookOpen]);
 
-  // Close menu on route change
+  // Close menus on route change
   useEffect(() => {
     setMenuOpen(false);
+    setBookOpen(false);
   }, [pathname]);
+
+  function handleBookClick() {
+    setBookOpen(!bookOpen);
+    setMenuOpen(false);
+  }
+
+  function handleMenuClick() {
+    setMenuOpen(!menuOpen);
+    setBookOpen(false);
+  }
 
   return (
     <header ref={menuRef} className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl">
@@ -62,7 +131,7 @@ export function Header() {
           />
         </Link>
 
-        {/* Right side: nav links + language + hamburger */}
+        {/* Right side: nav links + BOOK + language + hamburger */}
         <div className="flex items-center gap-1">
           {/* Desktop primary nav links */}
           <div className="hidden md:flex items-center gap-1">
@@ -83,19 +152,34 @@ export function Header() {
             ))}
           </div>
 
-          {/* Language toggle — desktop only, shows current lang */}
+          {/* BOOK button — always visible, prominent */}
+          <button
+            onClick={handleBookClick}
+            className={cn(
+              "ml-1 px-4 py-1.5 rounded-full text-sm font-bold transition-all",
+              "min-h-[36px] flex items-center gap-1.5",
+              bookOpen
+                ? "bg-foreground text-background"
+                : "bg-brand text-white hover:bg-brand-dark"
+            )}
+          >
+            <CalendarCheck className="w-3.5 h-3.5" />
+            {booking.label}
+          </button>
+
+          {/* Language toggle — desktop only */}
           <Link
             href={altPath}
-            className="hidden md:flex items-center gap-1.5 ml-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-xs font-semibold text-muted-foreground hover:text-foreground hover:border-border transition-all"
+            className="hidden md:flex items-center gap-1.5 ml-1 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-xs font-semibold text-muted-foreground hover:text-foreground hover:border-border transition-all"
             aria-label={altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
           >
             <Globe className="w-3.5 h-3.5" />
             {locale.toUpperCase()}
           </Link>
 
-          {/* Hamburger menu — always visible */}
+          {/* Hamburger menu */}
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={handleMenuClick}
             className="p-2 -mr-2 ml-1 rounded-lg hover:bg-accent transition-colors"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
@@ -104,7 +188,56 @@ export function Header() {
         </div>
       </nav>
 
-      {/* Dropdown menu — works on mobile AND desktop */}
+      {/* ─── BOOK dropdown ─── */}
+      <AnimatePresence>
+        {bookOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.98 }}
+            transition={{ duration: 0.2 }}
+            className={cn(
+              "mt-2 rounded-[1.5rem] border border-border/50",
+              "bg-background/95 backdrop-blur-xl",
+              "shadow-brand-lg overflow-hidden"
+            )}
+          >
+            <div className="p-2">
+              {booking.categories.map((cat) => (
+                <Link
+                  key={cat.href}
+                  href={cat.href}
+                  className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-accent transition-colors group"
+                >
+                  <div className={cn("w-10 h-10 rounded-xl flex items-center justify-center shrink-0", cat.accent)}>
+                    <cat.icon className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-foreground">{cat.title}</p>
+                    <p className="text-xs text-muted-foreground">{cat.description}</p>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground/50 group-hover:text-foreground transition-colors shrink-0" />
+                </Link>
+              ))}
+            </div>
+
+            {/* Returning client link */}
+            <div className="border-t border-border/50 px-5 py-3">
+              <a
+                href="https://secure.acuityscheduling.com/login/36720238"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-brand transition-colors"
+              >
+                <CalendarCheck className="w-3 h-3" />
+                {locale === "nl" ? "Al lid? Mijn boekingen →" : "Already a member? My bookings →"}
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ─── Hamburger dropdown ─── */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -155,17 +288,6 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
-
-              {/* Acuity login for returning clients */}
-              <a
-                href="https://secure.acuityscheduling.com/login/36720238"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3 py-2.5 rounded-lg text-sm font-semibold text-brand hover:text-brand-dark hover:bg-accent transition-colors min-h-[44px] flex items-center gap-2"
-              >
-                <CalendarCheck className="w-4 h-4" />
-                {locale === "nl" ? "Mijn Boekingen" : "My Bookings"}
-              </a>
 
               <div className="my-2 border-t border-border/50" />
 
