@@ -62,6 +62,7 @@ export default function LocationPageEN() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Location & Hours","url":"/en/location-hours"}]} />
       <Section>
         <SectionHeader
+          as="h1"
           overline="Location"
           title="Find Us in the Jordaan"
           description="Private personal training studio on the Egelantiersgracht, in the heart of Amsterdam's Jordaan district."

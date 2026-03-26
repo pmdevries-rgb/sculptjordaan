@@ -94,7 +94,7 @@ export const trainers: Trainer[] = [
       en: ["Strength", "Posture", "Technique"],
     },
     languages: ["NL", "EN"],
-    rate: "€49 / 45 min",
+    rate: "€45 / 45 min",
     instagram: "https://instagram.com/grskiiii",
     instagramHandle: "@grskiiii",
     bio: {

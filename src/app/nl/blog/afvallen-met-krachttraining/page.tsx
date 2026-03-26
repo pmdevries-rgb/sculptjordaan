@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     canonical: "/nl/blog/afvallen-met-krachttraining",
     languages: {
       nl: "/nl/blog/afvallen-met-krachttraining",
+      en: "/en/blog/weight-loss-strength-training",
     },
   },
 };
@@ -71,6 +72,7 @@ export default function AfvallenMetKrachttrainingNL() {
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>
 

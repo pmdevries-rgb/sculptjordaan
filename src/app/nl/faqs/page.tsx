@@ -50,7 +50,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Hoe annuleer ik een sessie?",
-        a: "Je kunt tot 24 uur voor je sessie gratis annuleren of verzetten via ons boekingssysteem. Bij annulering binnen 24 uur wordt de sessie in rekening gebracht.",
+        a: "Je kunt altijd gratis annuleren of verzetten via ons boekingssysteem.",
       },
       {
         q: "Wat moet ik meenemen?",
@@ -58,7 +58,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Hoe werkt het boekingssysteem?",
-        a: "We gebruiken Acuity Scheduling. Je boekt online, ontvangt een bevestiging per e-mail met een deurcode, en checkt zelf in bij aankomst. Geen receptie, geen wachttijden.",
+        a: "We gebruiken Acuity Scheduling. Je boekt online en ontvangt de avond ervoor je deurcode via WhatsApp. Geen receptie, geen wachttijden.",
       },
     ],
   },
@@ -71,7 +71,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Wat kosten de trainers?",
-        a: "Trainers bepalen hun eigen tarieven, vanaf \u20AC49 per sessie. Wij rekenen 0% commissie — de prijs die je van je trainer hoort is wat je betaalt.",
+        a: "Trainers bepalen hun eigen tarieven, vanaf €45 per sessie. Wij rekenen 0% commissie — de prijs die je van je trainer hoort is wat je betaalt.",
       },
       {
         q: "Hoe kies ik een trainer?",
@@ -88,7 +88,7 @@ const faqCategories: FaqCategory[] = [
     items: [
       {
         q: "Hoe werkt Open Gym?",
-        a: "Je boekt een tijdslot via ons boekingssysteem, ontvangt een deurcode per e-mail, en traint zelfstandig in onze privé studio. Maximaal 3 personen tegelijk.",
+        a: "Je boekt een tijdslot via ons boekingssysteem, ontvangt de avond ervoor je deurcode via WhatsApp, en traint zelfstandig in onze privé studio. Maximaal 3 personen tegelijk.",
       },
       {
         q: "Wat zijn de 4-weken cycli?",
@@ -100,7 +100,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Hoe werkt de deurcode?",
-        a: "Na het boeken ontvang je per e-mail een unieke deurcode die geldig is voor jouw tijdslot. Hiermee open je de voordeur en kun je direct beginnen met trainen.",
+        a: "De avond voor je sessie ontvang je via WhatsApp een unieke deurcode die geldig is voor jouw tijdslot. Hiermee open je de voordeur en kun je direct beginnen met trainen.",
       },
     ],
   },
@@ -144,6 +144,7 @@ export default function FaqsPageNL() {
       <FaqJsonLd faqs={allFaqs} />
       <Section>
         <SectionHeader
+          as="h1"
           overline="Veelgestelde vragen"
           title="Alles wat je wilt weten"
           description="Vind hier antwoord op de meest gestelde vragen. Staat je vraag er niet bij? Neem contact met ons op via WhatsApp."

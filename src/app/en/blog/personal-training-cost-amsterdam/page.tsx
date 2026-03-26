@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: "How Much Does Personal Training Cost in Amsterdam? — SculptClub",
   description:
-    "How much does personal training cost in Amsterdam? Discover average prices, what affects the cost, and why a boutique studio like SculptClub offers great value from €60/session.",
+    "How much does personal training cost in Amsterdam? Discover average prices, what affects the cost, and why a boutique studio like SculptClub offers great value from €45/session.",
   keywords: [
     "personal training cost amsterdam",
     "personal trainer price amsterdam",
@@ -71,6 +71,7 @@ export default function PersonalTrainingCostAmsterdam() {
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>
 
@@ -79,7 +80,7 @@ export default function PersonalTrainingCostAmsterdam() {
                 Thinking about personal training in Amsterdam but wondering what it costs? You are not alone. Prices
                 vary widely across the city, and it can be hard to know what you are actually paying for. In this guide,
                 we break down the average rates, explain what drives the cost, and show you why a boutique studio like
-                SculptClub in the Jordaan delivers excellent value starting from just 60 euros per session.
+                SculptClub in the Jordaan delivers excellent value starting from just 45 euros per session.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Average Personal Training Prices in Amsterdam</h2>
@@ -94,7 +95,7 @@ export default function PersonalTrainingCostAmsterdam() {
                 <li><strong>Top-tier (high-profile trainers):</strong> 120 &ndash; 200+ euros per session</li>
               </ul>
               <p>
-                At SculptClub, rates start from 60 euros per session depending on which trainer you choose. Each
+                At SculptClub, rates start from 45 euros per session depending on which trainer you choose. Each
                 trainer sets their own rate, so you can always find the best match for your budget and goals.
               </p>
 
@@ -159,7 +160,7 @@ export default function PersonalTrainingCostAmsterdam() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Personal Training at SculptClub</h2>
               <p>
-                At SculptClub in the Jordaan, you pay from 60 euros per session for training in a private studio with
+                At SculptClub in the Jordaan, you pay from 45 euros per session for training in a private studio with
                 professional equipment. Our trainers each have their own specialization — from strength training and
                 weight loss to rehabilitation and athletic performance. Your first introduction is always free, so you
                 can explore which trainer suits you best with no obligation.

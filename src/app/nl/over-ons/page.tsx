@@ -82,7 +82,7 @@ const uniqueFeatures = [
     icon: CalendarCheck,
     title: "Flexibel",
     description:
-      "Geen abonnement, geen contracten. Boek per sessie, annuleer tot 24 uur van tevoren.",
+      "Geen abonnement, geen contracten. Boek per sessie, annuleer altijd gratis.",
   },
   {
     icon: UserCheck,
@@ -99,6 +99,7 @@ export default function OverOnsPage() {
       {/* Hero */}
       <Section>
         <SectionHeader
+          as="h1"
           overline="Over SculptClub"
           title="Waar gedisciplineerde ambitie verfijnde transformatie ontmoet"
           description="SculptClub is een boutique personal training studio in het hart van Amsterdam\u2019s Jordaan. Opgericht in 2025 met een simpele missie: de beste priv\u00e9 trainingsruimte van Amsterdam bieden."

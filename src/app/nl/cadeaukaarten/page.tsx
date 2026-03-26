@@ -15,7 +15,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 export const metadata: Metadata = {
   title: "Cadeaukaarten — SculptClub Amsterdam Jordaan",
   description:
-    "Geef het cadeau van personal training. SculptClub cadeaukaarten vanaf 75 euro. Geldig 12 maanden. Betaal met iDEAL, Visa of Apple Pay.",
+    "Geef het cadeau van personal training. SculptClub cadeaukaarten vanaf 75 euro. Geldig 12 maanden. Betaal met Visa, Apple Pay of Google Pay.",
   alternates: {
     canonical: "/nl/cadeaukaarten",
     languages: {
@@ -70,6 +70,7 @@ export default function GiftCardsPageNL() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Cadeaukaarten","url":"/nl/cadeaukaarten"}]} />
       <Section>
         <SectionHeader
+          as="h1"
           overline="Cadeaukaarten"
           title="Geef het cadeau van fitness"
           description="Verras iemand met een personal training ervaring bij SculptClub. Het perfecte cadeau voor iedereen die wil werken aan gezondheid en kracht."
@@ -178,7 +179,7 @@ export default function GiftCardsPageNL() {
               </span>
               <span className="flex items-center gap-1.5">
                 <CreditCard className="w-4 h-4" />
-                iDEAL, Visa, Apple Pay
+                Visa, Apple Pay, Google Pay
               </span>
             </div>
 

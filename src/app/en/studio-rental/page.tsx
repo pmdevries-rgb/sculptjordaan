@@ -20,7 +20,13 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
+import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Studio Rental — Private Training Space | SculptClub Amsterdam Jordaan",
@@ -60,11 +66,40 @@ const features = [
 ];
 
 const galleryImages = [
-  { src: "/images/studio/studio-overview.jpeg", alt: "Studio overview" },
-  { src: "/images/studio/studio-interior-1.jpeg", alt: "Studio interior" },
-  { src: "/images/studio/power-rack.jpeg", alt: "Power rack" },
-  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Dumbbell rack" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Full overview of the SculptClub private studio with training equipment" },
+  { src: "/images/studio/studio-interior-1.jpeg", alt: "SculptClub studio interior showing the training floor and equipment" },
+  { src: "/images/studio/power-rack.jpeg", alt: "Power rack with barbell at SculptClub studio" },
+  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Professional dumbbell rack at SculptClub studio" },
 ];
+
+const faqs = [
+  {
+    q: "How much does it cost to rent the studio?",
+    a: "Half studio (1:1) from \u20ac12 per 60 minutes. Full studio (max 6 people) from \u20ac17 per 60 minutes. Save 10-23% with a discount package.",
+  },
+  {
+    q: "What discount packages are available?",
+    a: "Starter \u20ac89 (10% off), Routine \u20ac199 (15% off) and Volume \u20ac549 (23% off). Packages are valid for 1 year.",
+  },
+  {
+    q: "What is included with studio rental?",
+    a: "All equipment, wifi, music, climate control and cleaning. The studio is fully private during your rental time.",
+  },
+  {
+    q: "Do I need insurance?",
+    a: "Yes, as a freelance trainer or physiotherapist you need valid professional liability insurance. This is your own responsibility.",
+  },
+  {
+    q: "How does booking work?",
+    a: "You book online via our booking system. The night before your session you receive a door code via WhatsApp to enter the studio.",
+  },
+  {
+    q: "Can I try the studio first?",
+    a: "Yes, you can book a free trial session to see and try the studio. No obligations.",
+  },
+];
+
+const faqJsonLdData = faqs.map((f) => ({ question: f.q, answer: f.a }));
 
 export default function StudioRentalPageEN() {
   return (
@@ -76,11 +111,13 @@ export default function StudioRentalPageEN() {
         url="/en/studio-rental"
         priceRange="From €25 per hour"
       />
+      <FaqJsonLd faqs={faqJsonLdData} />
       {/* Hero */}
       <Section>
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionHeader
+          as="h1"
               overline="Studio Rental"
               title="Rent the Studio"
               description="Train your clients your way. Pay per session or save 10-23% with a discount package. No subscription. No obligations."
@@ -185,7 +222,7 @@ export default function StudioRentalPageEN() {
           <FadeIn delay={0.2}>
             <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <CreditCard className="h-4 w-4" />
-              <span>Pay with CreditCard, Apple Pay and iDEAL</span>
+              <span>Pay with CreditCard, Apple Pay, Google Pay or by invoice</span>
             </div>
           </FadeIn>
         </div>
@@ -343,6 +380,24 @@ export default function StudioRentalPageEN() {
             </FadeIn>
           ))}
         </div>
+      </Section>
+
+      {/* FAQ */}
+      <Section bg="muted">
+        <SectionHeader overline="Frequently asked questions" title="Studio Rental FAQ" />
+
+        <FadeIn>
+          <Accordion className="mx-auto max-w-2xl">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={i}>
+                <AccordionTrigger>{faq.q}</AccordionTrigger>
+                <AccordionContent>
+                  <p>{faq.a}</p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </FadeIn>
       </Section>
 
       {/* Bottom CTA */}

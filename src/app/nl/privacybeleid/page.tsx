@@ -21,6 +21,7 @@ export default function PrivacyPageNL() {
     <PageLayout>
       <Section>
         <SectionHeader
+          as="h1"
           overline="Juridisch"
           title="Privacybeleid"
           description="Laatst bijgewerkt: 23 februari 2026"

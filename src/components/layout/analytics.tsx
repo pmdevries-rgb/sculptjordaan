@@ -29,7 +29,7 @@ export function Analytics() {
       </Script>
 
       {/* Facebook Pixel */}
-      <Script id="fb-pixel" strategy="afterInteractive">
+      <Script id="fb-pixel" strategy="lazyOnload">
         {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -45,7 +45,7 @@ export function Analytics() {
       </Script>
 
       {/* Microsoft Clarity */}
-      <Script id="ms-clarity" strategy="afterInteractive">
+      <Script id="ms-clarity" strategy="lazyOnload">
         {`
           (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

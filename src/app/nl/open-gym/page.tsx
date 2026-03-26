@@ -127,7 +127,7 @@ const faqs = [
   },
   {
     q: "Wat als ik mijn sessie moet annuleren?",
-    a: "Je kunt tot 12 uur van tevoren kosteloos annuleren via het boekingssysteem. Bij te laat annuleren wordt de sessie in mindering gebracht op je tegoed.",
+    a: "Annuleren of verzetten kan altijd gratis via het boekingssysteem. Bij te laat annuleren wordt de sessie in mindering gebracht op je tegoed.",
   },
   {
     q: "Is het echt een lidmaatschap?",
@@ -145,12 +145,13 @@ export default function OpenGymPageNL() {
         name="Open Gym"
         description="Zelfstandig trainen in een privé studio in de Jordaan, Amsterdam. Boek sessies van 60 minuten, max 3 personen tegelijk."
         url="/nl/open-gym"
-        priceRange="€99 - €249 per maand"
+        priceRange="€29 - €89 per 4 weken"
       />
       <FaqJsonLd faqs={faqJsonLdData} />
       {/* Hero */}
       <Section>
         <SectionHeader
+          as="h1"
           overline="Open Gym"
           title="Open Gym in een Priv\u00e9 Studio"
           description="Boek sessies van 60 minuten in een rustige, volledig uitgeruste studio in de Jordaan. Max. 3 personen per slot."

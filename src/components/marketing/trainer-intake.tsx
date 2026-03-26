@@ -87,7 +87,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     <PageLayout>
       <Section>
         <div className="max-w-4xl mx-auto">
-          <SectionHeader overline={t.overline} title={t.title} description={t.description} />
+          <SectionHeader as="h1" overline={t.overline} title={t.title} description={t.description} />
 
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-10">
@@ -96,7 +96,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                 <div className="relative w-full aspect-[4/5] max-w-xs rounded-2xl overflow-hidden">
                   <Image
                     src={trainer.image}
-                    alt={trainer.name}
+                    alt={`Photo of ${trainer.name}, personal trainer at SculptClub Amsterdam`}
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 320px"

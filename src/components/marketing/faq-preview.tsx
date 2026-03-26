@@ -15,7 +15,7 @@ const faqs = {
   nl: [
     {
       q: "Wat kost personal training bij SculptClub?",
-      a: "Trainers bepalen hun eigen tarieven, vanaf €49 per sessie. De intake is altijd gratis. Wij rekenen 0% commissie — de prijs die je ziet is wat je betaalt.",
+      a: "Trainers bepalen hun eigen tarieven, vanaf €45 per sessie. De intake is altijd gratis. Wij rekenen 0% commissie — de prijs die je ziet is wat je betaalt.",
     },
     {
       q: "Hoe werkt Open Gym?",
@@ -31,13 +31,13 @@ const faqs = {
     },
     {
       q: "Hoe annuleer ik een sessie?",
-      a: "Tot 24 uur voor je sessie kun je gratis annuleren of verzetten via ons boekingssysteem.",
+      a: "Je kunt altijd gratis annuleren of verzetten via ons boekingssysteem.",
     },
   ],
   en: [
     {
       q: "How much does personal training cost at SculptClub?",
-      a: "Trainers set their own rates, starting from €49 per session. The intro is always free. We charge 0% commission — the price you see is what you pay.",
+      a: "Trainers set their own rates, starting from €45 per session. The intro is always free. We charge 0% commission — the price you see is what you pay.",
     },
     {
       q: "How does Open Gym work?",
@@ -53,7 +53,7 @@ const faqs = {
     },
     {
       q: "How do I cancel a session?",
-      a: "You can cancel or reschedule for free up to 24 hours before your session via our booking system.",
+      a: "You can always cancel or reschedule for free via our booking system.",
     },
   ],
 };

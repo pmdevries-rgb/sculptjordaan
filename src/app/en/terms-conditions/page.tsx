@@ -21,6 +21,7 @@ export default function TermsPageEN() {
     <PageLayout>
       <Section>
         <SectionHeader
+          as="h1"
           overline="Legal"
           title="Terms & Conditions"
           description="Version: 23 February 2026"
@@ -150,11 +151,9 @@ export default function TermsPageEN() {
           <div className="prose prose-lg max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold mb-4">5. Cancellation</h2>
             <p className="text-muted-foreground">
-              You may cancel or reschedule a booking free of charge up to{" "}
-              <strong>24 hours</strong> before the start time through the booking
-              system. Cancellations made less than 24 hours before the start time
-              will be charged at the full session price. Failure to appear
-              (no-show) is treated as a late cancellation. SculptClub reserves
+              You may cancel or reschedule a booking free of charge at any time
+              through the booking system. Failure to appear (no-show) without
+              prior cancellation may be charged. SculptClub reserves
               the right to cancel sessions in cases of force majeure (such as
               emergencies, equipment failure, or extreme weather conditions). In
               such cases, you will receive a full alternative time slot or

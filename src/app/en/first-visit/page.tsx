@@ -45,7 +45,7 @@ const steps = [
     icon: CalendarCheck,
     title: "Book your session",
     description:
-      "Schedule your first session via our online booking system or send us a message via WhatsApp. Choose a time slot that suits you and you will receive a confirmation email right away. Not sure which type of session is right for you? Send us a message — we are happy to help.",
+      "Schedule your first session via our online booking system or send us a message via WhatsApp. Choose a time slot that suits you and you will receive a confirmation right away. The evening before, you will receive your door code via WhatsApp. Not sure which type of session is right for you? Send us a message — we are happy to help.",
     cta: {
       label: "Book now",
       href: acuityLinks.generic,
@@ -57,7 +57,7 @@ const steps = [
     icon: MapPin,
     title: "Come to the studio",
     description:
-      "Our studio is located at Egelantiersgracht 424 in Amsterdam Jordaan. After booking, you will receive a door code by email to let yourself in. Arrive 5 minutes before your session so you can change and warm up at your own pace. The changing area is available as soon as you walk in.",
+      "Our studio is located at Egelantiersgracht 424 in Amsterdam Jordaan. The evening before your session, you will receive your door code via WhatsApp to let yourself in. Arrive 5 minutes before your session so you can change and warm up at your own pace. The changing area is available as soon as you walk in.",
   },
   {
     number: "3",
@@ -85,11 +85,11 @@ const faqs = [
   },
   {
     q: "Can I cancel or reschedule?",
-    a: "Yes, up to 24 hours before your session you can cancel or reschedule for free via the booking system. Within 24 hours, your trainer's cancellation policy applies.",
+    a: "Yes, you can always cancel or reschedule for free via the booking system.",
   },
   {
     q: "What if I cannot find the studio?",
-    a: "After booking, you will receive an email with the exact address, directions, and your personal door code. Still having trouble? Send us a WhatsApp and we will guide you.",
+    a: "The evening before your session, you will receive a WhatsApp with the exact address, directions, and your personal door code. Still having trouble? Send us a WhatsApp and we will guide you.",
   },
 ];
 
@@ -100,6 +100,7 @@ export default function FirstVisitPage() {
 
       <Section>
         <SectionHeader
+          as="h1"
           overline="First visit"
           title="Your first time at SculptClub"
           description="In 3 simple steps you are ready to train. No sign-up forms, no obligations — just a great workout in a great studio."

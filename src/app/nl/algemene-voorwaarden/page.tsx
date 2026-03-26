@@ -21,6 +21,7 @@ export default function TermsPageNL() {
     <PageLayout>
       <Section>
         <SectionHeader
+          as="h1"
           overline="Juridisch"
           title="Algemene Voorwaarden"
           description="Versie: 23 februari 2026"
@@ -153,11 +154,10 @@ export default function TermsPageNL() {
           <div className="prose prose-lg max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold mb-4">5. Annulering</h2>
             <p className="text-muted-foreground">
-              Je kunt een boeking tot <strong>24 uur</strong> voor aanvang
-              kosteloos annuleren of verzetten via het boekingssysteem. Bij
-              annulering binnen 24 uur voor aanvang wordt de volledige
-              sessieprijs in rekening gebracht. Niet-verschijnen (no-show) wordt
-              behandeld als een late annulering. SculptClub behoudt zich het
+              Je kunt een boeking altijd kosteloos annuleren of verzetten via
+              het boekingssysteem. Niet-verschijnen (no-show) zonder
+              voorafgaande annulering kan wel in rekening worden gebracht.
+              SculptClub behoudt zich het
               recht voor sessies te annuleren bij overmacht (zoals
               noodsituaties, defecte apparatuur of extreme weersomstandigheden).
               In dat geval ontvang je een volledig alternatief tijdslot of

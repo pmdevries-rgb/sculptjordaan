@@ -10,7 +10,7 @@ import { Star, ArrowRight, MessageCircle, ExternalLink } from "lucide-react";
 export const metadata: Metadata = {
   title: "Reviews — SculptClub Amsterdam Jordaan",
   description:
-    "Read what our clients say about SculptClub. 5.0 stars on Google with 8 reviews. Boutique personal training in Amsterdam Jordaan.",
+    "Read what our clients say about SculptClub. 5.0 stars on Google. Boutique personal training in Amsterdam Jordaan.",
   alternates: {
     canonical: "/en/reviews",
     languages: {
@@ -108,6 +108,7 @@ export default function ReviewsPageEN() {
       <ReviewsJsonLd reviews={reviewsJsonLdData} />
       <Section>
         <SectionHeader
+          as="h1"
           overline="Google Reviews"
           title="What our clients say"
           description={`${siteConfig.rating.value} stars on Google — ${siteConfig.rating.count} reviews`}

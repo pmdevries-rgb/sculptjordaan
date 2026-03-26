@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,6 +8,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { GoogleMap } from "@/components/marketing/google-map";
 import { siteConfig } from "@/config/site";
 import {
   MessageCircle,
@@ -15,6 +17,7 @@ import {
   MapPin,
   Clock,
   Send,
+  CheckCircle,
 } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
@@ -52,11 +55,33 @@ const contactInfo = [
 ];
 
 export default function ContactPageEN() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || !message.trim()) return;
+
+    const parts = [
+      `Hi! I'm ${name.trim()}.`,
+      phone.trim() ? `My phone number is ${phone.trim()}.` : "",
+      "",
+      message.trim(),
+    ].filter(Boolean);
+
+    const whatsappUrl = `https://wa.me/31683178934?text=${encodeURIComponent(parts.join("\n"))}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    setSubmitted(true);
+  };
+
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Contact","url":"/en/contact"}]} />
       <Section>
         <SectionHeader
+          as="h1"
           overline="Contact"
           title="Get in touch"
           description="Have a question, want to learn more, or just want to stop by? We're here to help."
@@ -122,70 +147,73 @@ export default function ContactPageEN() {
                 <h3 className="text-lg font-semibold mb-4">
                   Send us a message
                 </h3>
-                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Your name" />
+                {submitted ? (
+                  <div className="text-center py-8">
+                    <CheckCircle className="w-12 h-12 text-brand mx-auto mb-3" />
+                    <p className="font-semibold text-lg mb-1">Message ready!</p>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      You&apos;re being redirected to WhatsApp to send your message. We usually reply within 1 hour.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => { setSubmitted(false); setName(""); setPhone(""); setMessage(""); }}
+                      className="text-sm text-brand hover:text-brand-dark transition-colors"
+                    >
+                      Send another message
+                    </button>
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone number</Label>
-                    <Input id="phone" type="tel" placeholder="+31 6..." />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="How can we help you?"
-                      rows={4}
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    disabled
-                    className="inline-flex items-center justify-center w-full rounded-xl bg-brand text-brand-foreground px-6 py-3 text-sm font-semibold opacity-60 cursor-not-allowed"
-                  >
-                    <Send className="mr-2 w-4 h-4" />
-                    Send message
-                  </button>
-                  <p className="text-xs text-muted-foreground text-center">
-                    Contact form coming soon. In the meantime, reach out via
-                    WhatsApp.
-                  </p>
-                </form>
+                ) : (
+                  <form className="space-y-4" onSubmit={handleSubmit}>
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Name *</Label>
+                      <Input
+                        id="name"
+                        placeholder="Your name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone number</Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="+31 6..."
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Message *</Label>
+                      <Textarea
+                        id="message"
+                        placeholder="How can we help you?"
+                        rows={4}
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-center w-full rounded-xl bg-brand hover:bg-brand-dark text-brand-foreground px-6 py-3 text-sm font-semibold transition-all hover:scale-[1.01] active:scale-[0.98]"
+                    >
+                      <Send className="mr-2 w-4 h-4" />
+                      Send via WhatsApp
+                    </button>
+                    <p className="text-xs text-muted-foreground text-center">
+                      Your message will be prepared in WhatsApp so you can send it directly.
+                    </p>
+                  </form>
+                )}
               </CardContent>
             </Card>
           </FadeIn>
         </div>
       </Section>
 
-      {/* Map placeholder */}
-      <Section>
-        <FadeIn>
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              Find us in the Jordaan
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              {siteConfig.address.street}, {siteConfig.address.zip}{" "}
-              {siteConfig.address.city}
-            </p>
-            <div className="aspect-[16/9] rounded-2xl bg-secondary/50 border border-border/50 flex items-center justify-center">
-              <div className="text-center text-muted-foreground">
-                <MapPin className="w-8 h-8 mx-auto mb-2 text-brand" />
-                <p className="text-sm font-medium">Map coming soon</p>
-                <a
-                  href={`https://maps.google.com/?q=${siteConfig.address.street}+${siteConfig.address.zip}+${siteConfig.address.city}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-brand hover:text-brand-dark transition-colors mt-1 inline-block"
-                >
-                  View on Google Maps &rarr;
-                </a>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
-      </Section>
+      <GoogleMap locale="en" />
     </PageLayout>
   );
 }

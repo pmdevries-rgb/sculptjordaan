@@ -13,7 +13,7 @@ const services = {
       icon: Users,
       title: "Personal Training",
       description:
-        "Kies een personal trainer die past bij jouw doel. Eerste intake altijd gratis. Trainers bepalen hun eigen prijs — vanaf €49 per sessie.",
+        "Kies een personal trainer die past bij jouw doel. Eerste intake altijd gratis. Trainers bepalen hun eigen prijs — vanaf €45 per sessie.",
       href: "/nl/vind-jouw-personal-trainer",
       cta: "Bekijk trainers & tarieven",
       image: "/images/trainers/alex.jpg",
@@ -45,7 +45,7 @@ const services = {
       icon: Users,
       title: "Personal Training",
       description:
-        "Choose a personal trainer who fits your goals. First intro always free. Trainers set their own rates — from €49 per session.",
+        "Choose a personal trainer who fits your goals. First intro always free. Trainers set their own rates — from €45 per session.",
       href: "/en/find-personal-trainer",
       cta: "View trainers & rates",
       image: "/images/trainers/alex.jpg",

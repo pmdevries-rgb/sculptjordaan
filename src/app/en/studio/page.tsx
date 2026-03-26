@@ -22,7 +22,7 @@ export default function StudioPageEN() {
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Studio","url":"/en/studio"}]} />
       <Section>
-        <SectionHeader overline="The studio" title="Everything you need. Nothing you don't." description="A fully equipped private training space in the heart of the Jordaan — designed for focused, distraction-free training." />
+        <SectionHeader as="h1" overline="The studio" title="Everything you need. Nothing you don't." description="A fully equipped private training space in the heart of the Jordaan — designed for focused, distraction-free training." />
         <div className="grid sm:grid-cols-2 gap-8">
           {equipment.map((cat, i) => (
             <FadeIn key={cat.title} delay={i * 0.1}>

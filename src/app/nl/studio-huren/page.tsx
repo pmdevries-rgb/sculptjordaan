@@ -20,7 +20,13 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
+import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Studio Huren — Priv\u00e9 Trainingsruimte | SculptClub Amsterdam Jordaan",
@@ -60,11 +66,40 @@ const features = [
 ];
 
 const galleryImages = [
-  { src: "/images/studio/studio-overview.jpeg", alt: "Studio overzicht" },
-  { src: "/images/studio/studio-interior-1.jpeg", alt: "Studio interieur" },
-  { src: "/images/studio/power-rack.jpeg", alt: "Power rack" },
-  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Dumbbell rack" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de SculptClub privé studio met trainingsapparatuur" },
+  { src: "/images/studio/studio-interior-1.jpeg", alt: "SculptClub studio interieur met trainingsruimte en apparatuur" },
+  { src: "/images/studio/power-rack.jpeg", alt: "Power rack met halter in de SculptClub studio" },
+  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Professioneel dumbbell rack in de SculptClub studio" },
 ];
+
+const faqs = [
+  {
+    q: "Wat kost het om de studio te huren?",
+    a: "Halve studio (1:1) vanaf \u20ac12 per 60 minuten. Hele studio (max 6 personen) vanaf \u20ac17 per 60 minuten. Bespaar 10-23% met een kortingspakket.",
+  },
+  {
+    q: "Welke kortingspakketten zijn er?",
+    a: "Starter \u20ac89 (10% korting), Routine \u20ac199 (15% korting) en Volume \u20ac549 (23% korting). Pakketten zijn 1 jaar geldig.",
+  },
+  {
+    q: "Wat is inbegrepen bij studio huur?",
+    a: "Alle apparatuur, wifi, muziek, klimaatbeheersing en schoonmaak. De studio is volledig priv\u00e9 tijdens je huurtijd.",
+  },
+  {
+    q: "Heb ik een verzekering nodig?",
+    a: "Ja, als ZZP-trainer of fysiotherapeut dien je een geldige beroepsaansprakelijkheidsverzekering te hebben. Dit is je eigen verantwoordelijkheid.",
+  },
+  {
+    q: "Hoe werkt de boeking?",
+    a: "Je boekt online via ons boekingssysteem. De avond voor je sessie ontvang je een deurcode via WhatsApp waarmee je de studio kunt betreden.",
+  },
+  {
+    q: "Kan ik de studio eerst uitproberen?",
+    a: "Ja, je kunt een gratis proefsessie boeken om de studio te bekijken en uit te proberen. Geen verplichtingen.",
+  },
+];
+
+const faqJsonLdData = faqs.map((f) => ({ question: f.q, answer: f.a }));
 
 export default function StudioRentalPageNL() {
   return (
@@ -76,11 +111,13 @@ export default function StudioRentalPageNL() {
         url="/nl/studio-huren"
         priceRange="Vanaf €25 per uur"
       />
+      <FaqJsonLd faqs={faqJsonLdData} />
       {/* Hero */}
       <Section>
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionHeader
+          as="h1"
               overline="Studio Verhuur"
               title="Studio huren"
               description="Train je klanten op jouw manier. Betaal per sessie of bespaar 10-23% met een kortingspakket. Geen abonnement. Geen verplichtingen."
@@ -185,7 +222,7 @@ export default function StudioRentalPageNL() {
           <FadeIn delay={0.2}>
             <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <CreditCard className="h-4 w-4" />
-              <span>Betaal met CreditCard, Apple Pay en iDEAL</span>
+              <span>Betaal met CreditCard, Apple Pay, Google Pay of per factuur</span>
             </div>
           </FadeIn>
         </div>
@@ -343,6 +380,24 @@ export default function StudioRentalPageNL() {
             </FadeIn>
           ))}
         </div>
+      </Section>
+
+      {/* FAQ */}
+      <Section bg="muted">
+        <SectionHeader overline="Veelgestelde vragen" title="Studio Huren FAQ" />
+
+        <FadeIn>
+          <Accordion className="mx-auto max-w-2xl">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={i}>
+                <AccordionTrigger>{faq.q}</AccordionTrigger>
+                <AccordionContent>
+                  <p>{faq.a}</p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </FadeIn>
       </Section>
 
       {/* Bottom CTA */}

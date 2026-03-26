@@ -45,7 +45,7 @@ const steps = [
     icon: CalendarCheck,
     title: "Boek je sessie",
     description:
-      "Plan je eerste sessie via ons online boekingssysteem of stuur ons een bericht via WhatsApp. Kies een tijdslot dat je uitkomt en je ontvangt direct een bevestiging per e-mail. Heb je vragen over welk type sessie bij je past? Stuur ons gerust een bericht — we helpen je graag.",
+      "Plan je eerste sessie via ons online boekingssysteem of stuur ons een bericht via WhatsApp. Kies een tijdslot dat je uitkomt en je ontvangt direct een bevestiging. De avond ervoor ontvang je je deurcode via WhatsApp. Heb je vragen over welk type sessie bij je past? Stuur ons gerust een bericht — we helpen je graag.",
     cta: {
       label: "Boek nu",
       href: acuityLinks.generic,
@@ -57,7 +57,7 @@ const steps = [
     icon: MapPin,
     title: "Kom naar de studio",
     description:
-      "Onze studio bevindt zich aan de Egelantiersgracht 424 in Amsterdam Jordaan. Na je boeking ontvang je een deurcode per e-mail waarmee je jezelf binnenlaat. Kom 5 minuten voor je sessie zodat je rustig kunt omkleden en je warm kunt maken. De kleedruimte is direct beschikbaar wanneer je binnenkomt.",
+      "Onze studio bevindt zich aan de Egelantiersgracht 424 in Amsterdam Jordaan. De avond voor je sessie ontvang je een deurcode via WhatsApp waarmee je jezelf binnenlaat. Kom 5 minuten voor je sessie zodat je rustig kunt omkleden en je warm kunt maken. De kleedruimte is direct beschikbaar wanneer je binnenkomt.",
   },
   {
     number: "3",
@@ -85,11 +85,11 @@ const faqs = [
   },
   {
     q: "Kan ik annuleren of verplaatsen?",
-    a: "Ja, tot 24 uur voor je sessie kun je gratis annuleren of verzetten via het boekingssysteem. Binnen 24 uur geldt het annuleringsbeleid van je trainer.",
+    a: "Ja, je kunt altijd gratis annuleren of verzetten via het boekingssysteem.",
   },
   {
     q: "Wat als ik de studio niet kan vinden?",
-    a: "Na je boeking ontvang je een e-mail met het exacte adres, een routebeschrijving en je persoonlijke deurcode. Kom je er niet uit? Stuur ons een WhatsApp en we helpen je verder.",
+    a: "De avond voor je sessie ontvang je via WhatsApp het exacte adres, een routebeschrijving en je persoonlijke deurcode. Kom je er niet uit? Stuur ons een WhatsApp en we helpen je verder.",
   },
 ];
 
@@ -100,6 +100,7 @@ export default function EersteBezoekPage() {
 
       <Section>
         <SectionHeader
+          as="h1"
           overline="Eerste bezoek"
           title="Je eerste keer bij SculptClub"
           description="In 3 simpele stappen ben je klaar om te trainen. Geen inschrijfformulieren, geen verplichtingen — gewoon een goede training in een fijne studio."

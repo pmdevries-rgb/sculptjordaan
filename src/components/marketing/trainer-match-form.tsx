@@ -77,7 +77,7 @@ export function TrainerMatchForm({ locale }: TrainerMatchFormProps) {
       onSubmit={(e) => {
         e.preventDefault();
         if (name && whatsapp && goal) {
-          window.open(buildWhatsAppUrl(), "_blank");
+          window.open(buildWhatsAppUrl(), "_blank", "noopener,noreferrer");
         }
       }}
       className="mx-auto max-w-md space-y-4"

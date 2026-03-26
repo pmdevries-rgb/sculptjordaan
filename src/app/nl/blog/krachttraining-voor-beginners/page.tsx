@@ -70,6 +70,7 @@ export default function BlogPostNL2() {
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>
 

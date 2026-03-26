@@ -94,6 +94,7 @@ export default function StudioPageNL() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Studio","url":"/nl/studio"}]} />
       <Section>
         <SectionHeader
+          as="h1"
           overline="De Studio"
           title="Volledig uitgerust voor jouw training"
           description="Alles wat je nodig hebt voor kracht, conditie en functionele training — in een privé setting aan de gracht."

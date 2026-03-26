@@ -72,6 +72,7 @@ export default function GymWithoutMembershipEN() {
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>
 

@@ -45,6 +45,7 @@ export default function BookPageEN() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Book","url":"/en/book"}]} />
       <Section>
         <SectionHeader
+          as="h1"
           overline="Schedule"
           title="Book a session"
           description="Pick your session, select a time and you're set. Questions? WhatsApp us."

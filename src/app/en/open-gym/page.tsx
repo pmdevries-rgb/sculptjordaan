@@ -127,7 +127,7 @@ const faqs = [
   },
   {
     q: "What if I need to cancel?",
-    a: "You can cancel free of charge up to 12 hours before your session via the booking system. Late cancellations will be deducted from your credit.",
+    a: "You can always cancel or reschedule for free via the booking system. Late cancellations will be deducted from your credit.",
   },
   {
     q: "Is it really a membership?",
@@ -145,12 +145,13 @@ export default function OpenGymPageEN() {
         name="Open Gym"
         description="Train independently in a private studio in the Jordaan, Amsterdam. Book 60-minute sessions, max 3 people at a time."
         url="/en/open-gym"
-        priceRange="€99 - €249 per month"
+        priceRange="€29 - €89 per 4 weeks"
       />
       <FaqJsonLd faqs={faqJsonLdData} />
       {/* Hero */}
       <Section>
         <SectionHeader
+          as="h1"
           overline="Open Gym"
           title="Open Gym in a Private Studio"
           description="Book 60-minute sessions in a quiet, fully equipped studio in the Jordaan. Max. 3 people per slot."

@@ -56,7 +56,7 @@ const posts = [
   {
     title: "How Much Does Personal Training Cost in Amsterdam?",
     excerpt:
-      "Discover average prices, what affects the cost, and why a boutique studio offers great value from €60 per session.",
+      "Discover average prices, what affects the cost, and why a boutique studio offers great value from €45 per session.",
     category: "Personal Training",
     href: "/en/blog/personal-training-cost-amsterdam",
     date: "March 24, 2026",
@@ -85,6 +85,38 @@ const posts = [
     href: "/en/blog/gym-without-membership-amsterdam",
     date: "March 24, 2026",
   },
+  {
+    title: "Weight Loss Through Strength Training: Why It Works",
+    excerpt:
+      "Discover how strength training helps you lose weight more effectively than cardio alone. Build muscle, boost metabolism, and see lasting results.",
+    category: "Training",
+    href: "/en/blog/weight-loss-strength-training",
+    date: "March 24, 2026",
+  },
+  {
+    title: "How to Stay Consistent with Exercise: 7 Proven Tips",
+    excerpt:
+      "Struggling to stick with your workouts? Discover 7 practical tips to stay consistent with exercise and build lasting fitness habits.",
+    category: "Motivation",
+    href: "/en/blog/stay-consistent-exercise",
+    date: "March 26, 2026",
+  },
+  {
+    title: "Private Gym vs Big Box Gym: The Key Differences",
+    excerpt:
+      "What is the difference between a private gym and a big box gym? Compare atmosphere, equipment, personal attention and price.",
+    category: "Comparison",
+    href: "/en/blog/private-gym-vs-big-box-gym",
+    date: "March 26, 2026",
+  },
+  {
+    title: "Studio Rental for Personal Trainers in Amsterdam",
+    excerpt:
+      "Looking for a training space? Discover why renting a studio is the smartest choice for freelance personal trainers. From just €12 per hour.",
+    category: "For Trainers",
+    href: "/en/blog/studio-rental-personal-trainers-amsterdam",
+    date: "March 26, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
@@ -100,6 +132,7 @@ export default function BlogPageEN() {
       {/* Hero + Posts grid */}
       <Section bg="muted">
         <SectionHeader
+          as="h1"
           overline="Blog"
           title="Tips, Insights & Stories"
           description="Articles about personal training, fitness, nutrition and everything around our studio in the Jordaan."

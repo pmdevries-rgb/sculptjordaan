@@ -18,6 +18,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Vind Jouw Personal Trainer — SculptClub Amsterdam Jordaan",
@@ -53,11 +54,42 @@ export default function TrainersPageNL() {
         name="Personal Training"
         description="Privé personal training in een boutique studio in de Jordaan, Amsterdam. Kies je eigen trainer, eerste intake altijd gratis."
         url="/nl/vind-jouw-personal-trainer"
-        priceRange="€60 - €120 per sessie"
+        priceRange="€45 - €120 per sessie"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            itemListElement: trainers.map((trainer, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              item: {
+                "@type": "Person",
+                name: trainer.name,
+                jobTitle: "Personal Trainer",
+                description: trainer.bio.nl,
+                image: `${siteConfig.url}${trainer.image}`,
+                url: `${siteConfig.url}/nl/${trainer.slug.nl}`,
+                worksFor: {
+                  "@type": "LocalBusiness",
+                  name: siteConfig.name,
+                  url: siteConfig.url,
+                },
+                knowsLanguage: trainer.languages.map((l) =>
+                  l === "NL" ? "Dutch" : l === "EN" ? "English" : l === "PT" ? "Portuguese" : l
+                ),
+                ...(trainer.rate ? { makesOffer: { "@type": "Offer", price: trainer.rate } } : {}),
+              },
+            })),
+          }),
+        }}
       />
       {/* Hero */}
       <Section>
         <SectionHeader
+          as="h1"
           overline="Onze Trainers"
           title="Vind Jouw Personal Trainer"
           description="Gratis intake — trainers bepalen hun eigen tarieven. Boek een vrijblijvend kennismakingsgesprek en vind de perfecte match."
@@ -84,7 +116,7 @@ export default function TrainersPageNL() {
                   <div className="relative aspect-[4/3] w-full">
                     <Image
                       src={trainer.image}
-                      alt={trainer.name}
+                      alt={`Foto van ${trainer.name}, personal trainer bij SculptClub Amsterdam`}
                       fill
                       className="object-cover object-top"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -115,12 +147,10 @@ export default function TrainersPageNL() {
                         <span className="text-muted-foreground">Talen:</span>{" "}
                         {trainer.languages.join(", ")}
                       </p>
-                      {trainer.rate && (
-                        <p>
-                          <span className="text-muted-foreground">Tarief:</span>{" "}
-                          {trainer.rate}
-                        </p>
-                      )}
+                      <p>
+                        <span className="text-muted-foreground">Tarief:</span>{" "}
+                        {trainer.rate || "Op aanvraag"}
+                      </p>
                     </div>
                   </CardContent>
 

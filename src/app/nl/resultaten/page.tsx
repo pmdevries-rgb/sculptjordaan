@@ -72,6 +72,7 @@ export default function ResultsPageNL() {
       <ReviewsJsonLd reviews={reviewsJsonLdData} />
       <Section>
         <SectionHeader
+          as="h1"
           overline="Resultaten"
           title="Echte mensen, echte resultaten"
           description="Onze klanten behalen meetbare resultaten met persoonlijke begeleiding. Bekijk hun verhalen en transformaties."

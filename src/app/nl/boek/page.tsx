@@ -45,6 +45,7 @@ export default function BookPageNL() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Boek","url":"/nl/boek"}]} />
       <Section>
         <SectionHeader
+          as="h1"
           overline="Reserveren"
           title="Boek een sessie"
           description="Kies je sessie, selecteer een tijd en je bent klaar. Heb je vragen? WhatsApp ons."

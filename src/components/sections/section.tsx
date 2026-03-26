@@ -34,12 +34,14 @@ export function SectionHeader({
   description,
   center = true,
   className,
+  as: Tag = "h2",
 }: {
   overline?: string;
   title: string;
   description?: string;
   center?: boolean;
   className?: string;
+  as?: "h1" | "h2" | "h3";
 }) {
   return (
     <motion.div
@@ -50,7 +52,7 @@ export function SectionHeader({
       className={cn("mb-10 sm:mb-14", center && "text-center", className)}
     >
       {overline && <p className="overline mb-3">{overline}</p>}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">{title}</h2>
+      <Tag className="text-3xl sm:text-4xl lg:text-5xl font-bold">{title}</Tag>
       {description && (
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
           {description}

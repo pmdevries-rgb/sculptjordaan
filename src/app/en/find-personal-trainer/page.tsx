@@ -18,6 +18,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Find Your Personal Trainer — SculptClub Amsterdam Jordaan",
@@ -53,11 +54,42 @@ export default function TrainersPageEN() {
         name="Personal Training"
         description="Private personal training in a boutique studio in the Jordaan, Amsterdam. Choose your own trainer, first intro always free."
         url="/en/find-personal-trainer"
-        priceRange="€60 - €120 per session"
+        priceRange="€45 - €120 per session"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            itemListElement: trainers.map((trainer, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              item: {
+                "@type": "Person",
+                name: trainer.name,
+                jobTitle: "Personal Trainer",
+                description: trainer.bio.en,
+                image: `${siteConfig.url}${trainer.image}`,
+                url: `${siteConfig.url}/en/${trainer.slug.en}`,
+                worksFor: {
+                  "@type": "LocalBusiness",
+                  name: siteConfig.name,
+                  url: siteConfig.url,
+                },
+                knowsLanguage: trainer.languages.map((l) =>
+                  l === "NL" ? "Dutch" : l === "EN" ? "English" : l === "PT" ? "Portuguese" : l
+                ),
+                ...(trainer.rate ? { makesOffer: { "@type": "Offer", price: trainer.rate } } : {}),
+              },
+            })),
+          }),
+        }}
       />
       {/* Hero */}
       <Section>
         <SectionHeader
+          as="h1"
           overline="Our Trainers"
           title="Find Your Personal Trainer"
           description="Free intro session — trainers set their own rates. Book a no-obligation introduction and find the perfect match."
@@ -84,7 +116,7 @@ export default function TrainersPageEN() {
                   <div className="relative aspect-[4/3] w-full">
                     <Image
                       src={trainer.image}
-                      alt={trainer.name}
+                      alt={`Photo of ${trainer.name}, personal trainer at SculptClub Amsterdam`}
                       fill
                       className="object-cover object-top"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -115,12 +147,10 @@ export default function TrainersPageEN() {
                         <span className="text-muted-foreground">Languages:</span>{" "}
                         {trainer.languages.join(", ")}
                       </p>
-                      {trainer.rate && (
-                        <p>
-                          <span className="text-muted-foreground">Rate:</span>{" "}
-                          {trainer.rate}
-                        </p>
-                      )}
+                      <p>
+                        <span className="text-muted-foreground">Rate:</span>{" "}
+                        {trainer.rate || "On request"}
+                      </p>
                     </div>
                   </CardContent>
 

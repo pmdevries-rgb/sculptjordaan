@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { LocalBusinessJsonLd, OrganizationJsonLd } from "@/components/seo/json-ld";
@@ -82,7 +83,10 @@ export default function RootLayout({
     >
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <Analytics />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <a
@@ -96,6 +100,12 @@ export default function RootLayout({
         {children}
         <CookieConsent />
         <WhatsAppButton />
+        <Analytics />
+        <Script
+          src="https://funnelpilot.app/fp.js"
+          data-site="sculptclub"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

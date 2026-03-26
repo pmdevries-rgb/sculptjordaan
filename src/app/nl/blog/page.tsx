@@ -56,7 +56,7 @@ const posts = [
   {
     title: "Wat kost personal training in Amsterdam?",
     excerpt:
-      "Ontdek de gemiddelde prijzen, wat de kosten bepaalt en waarom een boutique studio uitstekende waarde biedt vanaf €60 per sessie.",
+      "Ontdek de gemiddelde prijzen, wat de kosten bepaalt en waarom een boutique studio uitstekende waarde biedt vanaf €45 per sessie.",
     category: "Personal Training",
     href: "/nl/blog/wat-kost-personal-training-amsterdam",
     date: "24 maart 2026",
@@ -93,6 +93,30 @@ const posts = [
     href: "/nl/blog/afvallen-met-krachttraining",
     date: "24 maart 2026",
   },
+  {
+    title: "Hoe blijf je consistent met sporten? 7 bewezen tips",
+    excerpt:
+      "Moeite om vol te houden? Ontdek 7 praktische tips om consistent te blijven met sporten en een duurzame trainingsroutine op te bouwen.",
+    category: "Motivatie",
+    href: "/nl/blog/consistent-blijven-met-sporten",
+    date: "26 maart 2026",
+  },
+  {
+    title: "Privé sportschool vs grote sportschool: De verschillen",
+    excerpt:
+      "Wat is het verschil tussen een privé sportschool en een grote keten? Vergelijk sfeer, apparatuur, persoonlijke aandacht en prijs.",
+    category: "Vergelijking",
+    href: "/nl/blog/prive-sportschool-vs-grote-sportschool",
+    date: "26 maart 2026",
+  },
+  {
+    title: "Studio huren als personal trainer in Amsterdam",
+    excerpt:
+      "Op zoek naar een trainingsruimte? Ontdek waarom het huren van een studio de slimste keuze is voor ZZP personal trainers. Vanaf €12 per uur.",
+    category: "Voor Trainers",
+    href: "/nl/blog/studio-huren-personal-trainer-amsterdam",
+    date: "26 maart 2026",
+  },
 ];
 
 export default function BlogPageNL() {
@@ -108,6 +132,7 @@ export default function BlogPageNL() {
       {/* Hero + Posts grid */}
       <Section bg="muted">
         <SectionHeader
+          as="h1"
           overline="Blog"
           title="Tips, Inzichten & Verhalen"
           description="Artikelen over personal training, fitness, voeding en alles rondom onze studio in de Jordaan."

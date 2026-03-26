@@ -50,7 +50,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "How do I cancel a session?",
-        a: "You can cancel or reschedule for free up to 24 hours before your session via our booking system. Cancellations within 24 hours will be charged.",
+        a: "You can always cancel or reschedule for free via our booking system.",
       },
       {
         q: "What should I bring?",
@@ -58,7 +58,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "How does the booking system work?",
-        a: "We use Acuity Scheduling. You book online, receive a confirmation email with a door code, and check in yourself upon arrival. No reception, no waiting.",
+        a: "We use Acuity Scheduling. You book online and receive your door code via WhatsApp the evening before. No reception, no waiting.",
       },
     ],
   },
@@ -71,7 +71,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "What do the trainers charge?",
-        a: "Trainers set their own rates, starting from \u20AC49 per session. We charge 0% commission — the price your trainer quotes is what you pay.",
+        a: "Trainers set their own rates, starting from €45 per session. We charge 0% commission — the price your trainer quotes is what you pay.",
       },
       {
         q: "How do I choose a trainer?",
@@ -88,7 +88,7 @@ const faqCategories: FaqCategory[] = [
     items: [
       {
         q: "How does Open Gym work?",
-        a: "You book a time slot via our booking system, receive a door code by email, and train independently in our private studio. Maximum 3 people at a time.",
+        a: "You book a time slot via our booking system, receive your door code via WhatsApp the evening before, and train independently in our private studio. Maximum 3 people at a time.",
       },
       {
         q: "What are the 4-week cycles?",
@@ -100,7 +100,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "How does the door code work?",
-        a: "After booking you receive a unique door code by email that is valid for your time slot. Use it to open the front door and start training right away.",
+        a: "The evening before your session, you receive a unique door code via WhatsApp that is valid for your time slot. Use it to open the front door and start training right away.",
       },
     ],
   },
@@ -144,6 +144,7 @@ export default function FaqsPageEN() {
       <FaqJsonLd faqs={allFaqs} />
       <Section>
         <SectionHeader
+          as="h1"
           overline="FAQ"
           title="Everything you need to know"
           description="Find answers to the most common questions here. Can't find what you're looking for? Reach out via WhatsApp."
