@@ -1,15 +1,22 @@
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from "@/components/ui/card";
 import {
   Accordion,
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import { CheckCircle, MessageCircle, ArrowRight, Eye, Key, Repeat } from "lucide-react";
+import { MessageCircle, ArrowRight, CreditCard, Eye, Key, Repeat } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
 
@@ -25,15 +32,6 @@ export const metadata: Metadata = {
     },
   },
 };
-
-const benefits = [
-  "Gratis proefsessie — bekijk de studio zonder verplichtingen",
-  "Halve studio (1:1) vanaf €12/uur, hele studio (max 6) vanaf €17/uur",
-  "Professionele apparatuur: powerrack, kabelmachine, Concept2, dumbbells tot 40kg",
-  "Geen contract, geen commissie — jij houdt 100% van je omzet",
-  "Bespaar 10-23% met een strippenkaart (1 jaar geldig)",
-  "Eigen deurcode via WhatsApp — geen receptie, geen wachttijd",
-];
 
 const steps = [
   {
@@ -62,12 +60,8 @@ const studioImages = [
 
 const faqs = [
   {
-    q: "Wat kost het om de studio te huren?",
-    a: "Halve studio (1:1) vanaf €12 per 60 minuten. Hele studio (max 6 personen) vanaf €17 per 60 minuten. Bespaar 10-23% met een kortingspakket.",
-  },
-  {
-    q: "Welke apparatuur is beschikbaar?",
-    a: "Powerrack, kabelmachine, Concept2 roeier, verstelbare bank, dumbbells tot 40kg, kettlebells, resistance bands en meer. Alles wat je nodig hebt voor een complete sessie.",
+    q: "Wat is inbegrepen bij studio huur?",
+    a: "Alle apparatuur, wifi, muziek, klimaatbeheersing en schoonmaak. De studio is volledig privé tijdens je huurtijd.",
   },
   {
     q: "Hoe werkt het boeken?",
@@ -82,8 +76,12 @@ const faqs = [
     a: "Ja, als ZZP-trainer of fysiotherapeut dien je een geldige beroepsaansprakelijkheidsverzekering te hebben. Dit is je eigen verantwoordelijkheid.",
   },
   {
-    q: "Welke kortingspakketten zijn er?",
-    a: "Starter €89 (10% korting), Routine €199 (15% korting) en Volume €549 (23% korting). Pakketten zijn 1 jaar geldig.",
+    q: "Hoe lang zijn pakketten geldig?",
+    a: "Alle kortingspakketten zijn 1 jaar geldig. Je kiest zelf wanneer je ze gebruikt.",
+  },
+  {
+    q: "Kan ik betalen per factuur?",
+    a: "Ja. Studio huur kan betaald worden met CreditCard, Apple Pay, Google Pay of per factuur.",
   },
 ];
 
@@ -106,21 +104,21 @@ export default function BoekStudioPageNL() {
       />
       <FaqJsonLd faqs={faqJsonLdData} />
 
-      {/* Hero */}
+      {/* Hero — short, drives to pricing below */}
       <Section>
         <SectionHeader
           as="h1"
           overline="Voor Personal Trainers"
           title="Boek de Studio"
-          description="Huur een volledig uitgeruste privé studio per uur. Direct beschikbaar, geen vast contract. Jouw klanten, jouw ruimte."
+          description="Huur een volledig uitgeruste privé studio per uur. Geen contract, geen commissie — 100% van je omzet is voor jou."
         />
         <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <ButtonLink href={acuityLinks.studioTrial} size="lg">
-            Boek gratis proefsessie
+          <ButtonLink href="#tarieven" size="lg">
+            Bekijk tarieven & boek direct
             <ArrowRight className="ml-2 h-4 w-4" />
           </ButtonLink>
-          <ButtonLink href="/nl/studio-huren#tarieven" size="lg" variant="outline">
-            Bekijk tarieven
+          <ButtonLink href={acuityLinks.studioTrial} size="lg" variant="outline">
+            Gratis proefsessie
           </ButtonLink>
         </FadeIn>
       </Section>
@@ -133,9 +131,199 @@ export default function BoekStudioPageNL() {
               Vanaf €12/uur · 0% commissie · Geen contract
             </p>
             <p className="text-sm text-muted-foreground">
-              Dagelijks 06:30 – 22:00 · Proefsessie gratis · Vaste trainers huren regelmatig
+              Dagelijks 06:30 – 22:00 · Proefsessie gratis · Vaste trainers huren wekelijks
             </p>
           </div>
+        </FadeIn>
+      </Section>
+
+      {/* ═══ PRICING TABLE — the core conversion element ═══ */}
+      <Section id="tarieven">
+        <SectionHeader
+          overline="Tarieven"
+          title="Uurtarieven"
+          description="Boek direct per sessie. Geen abonnement verplicht."
+        />
+
+        <div className="mx-auto max-w-3xl">
+          <FadeIn>
+            <div className="overflow-hidden rounded-xl border bg-card">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b bg-muted/50">
+                    <th className="px-4 py-3 text-left font-medium">Ruimte</th>
+                    <th className="px-4 py-3 text-center font-medium">60 min</th>
+                    <th className="px-4 py-3 text-center font-medium">90 min</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="px-4 py-3 font-medium">Halve studio (1:1)</td>
+                    <td className="px-4 py-3 text-center">
+                      <span className="font-semibold">&euro;12</span>
+                      <ButtonLink
+                        href={acuityLinks.halfStudio60}
+                        size="sm"
+                        className="ml-3"
+                      >
+                        Boek
+                      </ButtonLink>
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      <span className="font-semibold">&euro;17</span>
+                      <ButtonLink
+                        href={acuityLinks.halfStudio90}
+                        size="sm"
+                        className="ml-3"
+                      >
+                        Boek
+                      </ButtonLink>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-medium">Hele studio (max 6)</td>
+                    <td className="px-4 py-3 text-center">
+                      <span className="font-semibold">&euro;17</span>
+                      <ButtonLink
+                        href={acuityLinks.fullStudio60}
+                        size="sm"
+                        className="ml-3"
+                      >
+                        Boek
+                      </ButtonLink>
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      <span className="font-semibold">&euro;24</span>
+                      <ButtonLink
+                        href={acuityLinks.fullStudio90}
+                        size="sm"
+                        className="ml-3"
+                      >
+                        Boek
+                      </ButtonLink>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+              <CreditCard className="h-4 w-4" />
+              <span>Betaal met CreditCard, Apple Pay, Google Pay of per factuur</span>
+            </div>
+          </FadeIn>
+        </div>
+      </Section>
+
+      {/* ═══ DISCOUNT PACKAGES — upsell for regular trainers ═══ */}
+      <Section bg="muted">
+        <SectionHeader
+          overline="Voordeelpakketten"
+          title="Meer Trainen, Meer Besparen"
+          description="Koop een strippenkaart en bespaar op elke sessie. Pakketten zijn 1 jaar geldig."
+        />
+
+        <div className="grid gap-6 sm:grid-cols-3">
+          {/* Starter */}
+          <FadeIn delay={0}>
+            <Card className="h-full text-center">
+              <CardHeader>
+                <CardTitle className="text-xl">Starter</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground line-through">
+                  &euro;99
+                </p>
+                <p className="text-3xl font-bold">&euro;89</p>
+                <p className="mt-2 text-sm text-discount font-medium">
+                  Bespaar 10%
+                </p>
+                <ButtonLink
+                  href={acuityPackages.studio.starter}
+                  size="sm"
+                  className="mt-4"
+                >
+                  Koop Starter
+                </ButtonLink>
+              </CardContent>
+            </Card>
+          </FadeIn>
+
+          {/* Routine */}
+          <FadeIn delay={0.1}>
+            <Card className="h-full text-center ring-2 ring-primary">
+              <CardHeader>
+                <Badge className="mx-auto mb-2">Meest gekozen</Badge>
+                <CardTitle className="text-xl">Routine</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground line-through">
+                  &euro;234
+                </p>
+                <p className="text-3xl font-bold">&euro;199</p>
+                <p className="mt-2 text-sm text-discount font-medium">
+                  Bespaar 15%
+                </p>
+                <ButtonLink
+                  href={acuityPackages.studio.routine}
+                  size="sm"
+                  className="mt-4"
+                >
+                  Koop Routine
+                </ButtonLink>
+              </CardContent>
+            </Card>
+          </FadeIn>
+
+          {/* Volume */}
+          <FadeIn delay={0.2}>
+            <Card className="h-full text-center ring-2 ring-primary">
+              <CardHeader>
+                <Badge className="mx-auto mb-2">Beste deal</Badge>
+                <CardTitle className="text-xl">Volume</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground line-through">
+                  &euro;713
+                </p>
+                <p className="text-3xl font-bold">&euro;549</p>
+                <p className="mt-2 text-sm text-discount font-medium">
+                  Bespaar 23%
+                </p>
+                <ButtonLink
+                  href={acuityPackages.studio.volume}
+                  size="sm"
+                  className="mt-4"
+                >
+                  Koop Volume
+                </ButtonLink>
+              </CardContent>
+            </Card>
+          </FadeIn>
+        </div>
+
+        <FadeIn delay={0.3}>
+          <p className="mt-6 text-center text-sm text-muted-foreground">
+            Geldig 1 jaar. Laagste effectieve tarief:{" "}
+            <span className="text-discount font-medium">&euro;9,24/sessie</span>
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={0.35}>
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            Liever per bankoverschrijving?{" "}
+            <a
+              href={whatsappLinks.bankTransferNl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+            >
+              <MessageCircle className="h-3.5 w-3.5" />
+              Stuur ons een WhatsApp
+            </a>
+          </p>
         </FadeIn>
       </Section>
 
@@ -160,35 +348,8 @@ export default function BoekStudioPageNL() {
         </div>
       </Section>
 
-      {/* What you get */}
-      <Section bg="muted">
-        <SectionHeader
-          overline="Wat je krijgt"
-          title="Volledig Uitgeruste Privé Studio"
-          description="Alles om je klanten professioneel te trainen, zonder overhead."
-        />
-        <FadeIn>
-          <div className="mx-auto max-w-lg">
-            <ul className="space-y-4">
-              {benefits.map((benefit, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </FadeIn>
-        <FadeIn delay={0.2} className="mt-8 flex justify-center">
-          <ButtonLink href={acuityLinks.studioTrial} size="lg">
-            Boek gratis proefsessie
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </ButtonLink>
-        </FadeIn>
-      </Section>
-
       {/* Studio gallery */}
-      <Section>
+      <Section bg="muted">
         <SectionHeader overline="De studio" title="Bekijk de Ruimte" />
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {studioImages.map((img, i) => (
@@ -208,7 +369,7 @@ export default function BoekStudioPageNL() {
       </Section>
 
       {/* Social proof */}
-      <Section bg="muted">
+      <Section>
         <SectionHeader overline="Trainers over SculptClub" title="Wat Collega-Trainers Zeggen" />
         <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
           <FadeIn>
@@ -239,7 +400,7 @@ export default function BoekStudioPageNL() {
       </Section>
 
       {/* FAQ */}
-      <Section>
+      <Section bg="muted">
         <SectionHeader overline="Veelgestelde vragen" title="Heb je een Vraag?" />
         <FadeIn>
           <Accordion className="mx-auto max-w-2xl">
@@ -263,11 +424,11 @@ export default function BoekStudioPageNL() {
               Klaar om je klanten hier te trainen?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-white/70">
-              Probeer de studio gratis uit. Geen verplichtingen.
+              Probeer de studio gratis uit of boek direct een sessie.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <ButtonLink href={acuityLinks.studioTrial} size="lg">
-                Boek gratis proefsessie
+              <ButtonLink href="#tarieven" size="lg">
+                Boek een sessie
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink

@@ -1,15 +1,22 @@
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from "@/components/ui/card";
 import {
   Accordion,
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import { CheckCircle, MessageCircle, ArrowRight, Eye, Key, Repeat } from "lucide-react";
+import { MessageCircle, ArrowRight, CreditCard, Eye, Key, Repeat } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
 
@@ -26,15 +33,6 @@ export const metadata: Metadata = {
   },
 };
 
-const benefits = [
-  "Free trial session — see the studio with no obligation",
-  "Half studio (1:1) from €12/hour, full studio (max 6) from €17/hour",
-  "Professional equipment: power rack, cable machine, Concept2, dumbbells up to 40kg",
-  "No contract, no commission — you keep 100% of your revenue",
-  "Save 10-23% with a discount package (valid 1 year)",
-  "Your own door code via WhatsApp — no reception, no waiting",
-];
-
 const steps = [
   {
     icon: Eye,
@@ -49,7 +47,7 @@ const steps = [
   {
     icon: Repeat,
     title: "Train your clients",
-    description: "Use the studio whenever it suits you. Flexible, no fixed contract. Most trainers come back weekly.",
+    description: "Use the studio whenever it suits you. Flexible, no fixed contract.",
   },
 ];
 
@@ -62,12 +60,8 @@ const studioImages = [
 
 const faqs = [
   {
-    q: "How much does it cost to rent the studio?",
-    a: "Half studio (1:1) from €12 per 60 minutes. Full studio (max 6 people) from €17 per 60 minutes. Save 10-23% with a discount package.",
-  },
-  {
-    q: "What equipment is available?",
-    a: "Power rack, cable machine, Concept2 rower, adjustable bench, dumbbells up to 40kg, kettlebells, resistance bands and more. Everything for a complete session.",
+    q: "What's included in studio rental?",
+    a: "All equipment, wifi, music, climate control and cleaning. The studio is fully private during your rental time.",
   },
   {
     q: "How does booking work?",
@@ -82,8 +76,12 @@ const faqs = [
     a: "Yes, as a freelance trainer or physiotherapist you need valid professional liability insurance. This is your own responsibility.",
   },
   {
-    q: "What discount packages are available?",
-    a: "Starter €89 (10% off), Routine €199 (15% off) and Volume €549 (23% off). Packages are valid for 1 year.",
+    q: "How long are packages valid?",
+    a: "All discount packages are valid for 1 year. You choose when to use them.",
+  },
+  {
+    q: "Can I pay by invoice?",
+    a: "Yes. Studio rental can be paid with CreditCard, Apple Pay, Google Pay or by invoice.",
   },
 ];
 
@@ -106,24 +104,26 @@ export default function BookStudioPageEN() {
       />
       <FaqJsonLd faqs={faqJsonLdData} />
 
+      {/* Hero — short, drives to pricing */}
       <Section>
         <SectionHeader
           as="h1"
           overline="For Personal Trainers"
           title="Book the Studio"
-          description="Rent a fully equipped private studio by the hour. Available immediately, no fixed contract. Your clients, your space."
+          description="Rent a fully equipped private studio by the hour. No contract, no commission — 100% of your revenue is yours."
         />
         <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <ButtonLink href={acuityLinks.studioTrial} size="lg">
-            Book free trial session
+          <ButtonLink href="#pricing" size="lg">
+            View rates & book directly
             <ArrowRight className="ml-2 h-4 w-4" />
           </ButtonLink>
-          <ButtonLink href="/en/studio-rental#pricing" size="lg" variant="outline">
-            View pricing
+          <ButtonLink href={acuityLinks.studioTrial} size="lg" variant="outline">
+            Free trial session
           </ButtonLink>
         </FadeIn>
       </Section>
 
+      {/* Trust bar */}
       <Section bg="muted">
         <FadeIn>
           <div className="flex flex-col items-center gap-2 text-center">
@@ -137,6 +137,154 @@ export default function BookStudioPageEN() {
         </FadeIn>
       </Section>
 
+      {/* ═══ PRICING TABLE ═══ */}
+      <Section id="pricing">
+        <SectionHeader
+          overline="Rates"
+          title="Hourly Rates"
+          description="Book directly per session. No membership required."
+        />
+
+        <div className="mx-auto max-w-3xl">
+          <FadeIn>
+            <div className="overflow-hidden rounded-xl border bg-card">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b bg-muted/50">
+                    <th className="px-4 py-3 text-left font-medium">Space</th>
+                    <th className="px-4 py-3 text-center font-medium">60 min</th>
+                    <th className="px-4 py-3 text-center font-medium">90 min</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="px-4 py-3 font-medium">Half studio (1:1)</td>
+                    <td className="px-4 py-3 text-center">
+                      <span className="font-semibold">&euro;12</span>
+                      <ButtonLink href={acuityLinks.halfStudio60} size="sm" className="ml-3">
+                        Book
+                      </ButtonLink>
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      <span className="font-semibold">&euro;17</span>
+                      <ButtonLink href={acuityLinks.halfStudio90} size="sm" className="ml-3">
+                        Book
+                      </ButtonLink>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-medium">Full studio (max 6)</td>
+                    <td className="px-4 py-3 text-center">
+                      <span className="font-semibold">&euro;17</span>
+                      <ButtonLink href={acuityLinks.fullStudio60} size="sm" className="ml-3">
+                        Book
+                      </ButtonLink>
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      <span className="font-semibold">&euro;24</span>
+                      <ButtonLink href={acuityLinks.fullStudio90} size="sm" className="ml-3">
+                        Book
+                      </ButtonLink>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+              <CreditCard className="h-4 w-4" />
+              <span>Pay with CreditCard, Apple Pay, Google Pay or by invoice</span>
+            </div>
+          </FadeIn>
+        </div>
+      </Section>
+
+      {/* ═══ DISCOUNT PACKAGES ═══ */}
+      <Section bg="muted">
+        <SectionHeader
+          overline="Discount Packages"
+          title="Train More, Save More"
+          description="Buy a multi-pass and save on every session. Packages valid for 1 year."
+        />
+
+        <div className="grid gap-6 sm:grid-cols-3">
+          <FadeIn delay={0}>
+            <Card className="h-full text-center">
+              <CardHeader>
+                <CardTitle className="text-xl">Starter</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground line-through">&euro;99</p>
+                <p className="text-3xl font-bold">&euro;89</p>
+                <p className="mt-2 text-sm text-discount font-medium">Save 10%</p>
+                <ButtonLink href={acuityPackages.studio.starter} size="sm" className="mt-4">
+                  Buy Starter
+                </ButtonLink>
+              </CardContent>
+            </Card>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <Card className="h-full text-center ring-2 ring-primary">
+              <CardHeader>
+                <Badge className="mx-auto mb-2">Most popular</Badge>
+                <CardTitle className="text-xl">Routine</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground line-through">&euro;234</p>
+                <p className="text-3xl font-bold">&euro;199</p>
+                <p className="mt-2 text-sm text-discount font-medium">Save 15%</p>
+                <ButtonLink href={acuityPackages.studio.routine} size="sm" className="mt-4">
+                  Buy Routine
+                </ButtonLink>
+              </CardContent>
+            </Card>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <Card className="h-full text-center ring-2 ring-primary">
+              <CardHeader>
+                <Badge className="mx-auto mb-2">Best deal</Badge>
+                <CardTitle className="text-xl">Volume</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground line-through">&euro;713</p>
+                <p className="text-3xl font-bold">&euro;549</p>
+                <p className="mt-2 text-sm text-discount font-medium">Save 23%</p>
+                <ButtonLink href={acuityPackages.studio.volume} size="sm" className="mt-4">
+                  Buy Volume
+                </ButtonLink>
+              </CardContent>
+            </Card>
+          </FadeIn>
+        </div>
+
+        <FadeIn delay={0.3}>
+          <p className="mt-6 text-center text-sm text-muted-foreground">
+            Valid 1 year. Lowest effective rate:{" "}
+            <span className="text-discount font-medium">&euro;9.24/session</span>
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={0.35}>
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            Prefer bank transfer?{" "}
+            <a
+              href={whatsappLinks.bankTransferEn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+            >
+              <MessageCircle className="h-3.5 w-3.5" />
+              Send us a WhatsApp
+            </a>
+          </p>
+        </FadeIn>
+      </Section>
+
+      {/* How it works */}
       <Section>
         <SectionHeader overline="How it works" title="Get Started in 3 Steps" />
         <div className="grid gap-8 sm:grid-cols-3">
@@ -154,33 +302,8 @@ export default function BookStudioPageEN() {
         </div>
       </Section>
 
+      {/* Studio gallery */}
       <Section bg="muted">
-        <SectionHeader
-          overline="What you get"
-          title="Fully Equipped Private Studio"
-          description="Everything to train your clients professionally, without overhead."
-        />
-        <FadeIn>
-          <div className="mx-auto max-w-lg">
-            <ul className="space-y-4">
-              {benefits.map((benefit, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </FadeIn>
-        <FadeIn delay={0.2} className="mt-8 flex justify-center">
-          <ButtonLink href={acuityLinks.studioTrial} size="lg">
-            Book free trial session
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </ButtonLink>
-        </FadeIn>
-      </Section>
-
-      <Section>
         <SectionHeader overline="The studio" title="See the Space" />
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {studioImages.map((img, i) => (
@@ -193,7 +316,8 @@ export default function BookStudioPageEN() {
         </div>
       </Section>
 
-      <Section bg="muted">
+      {/* Social proof */}
+      <Section>
         <SectionHeader overline="Trainers about SculptClub" title="What Fellow Trainers Say" />
         <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
           <FadeIn>
@@ -217,7 +341,8 @@ export default function BookStudioPageEN() {
         </div>
       </Section>
 
-      <Section>
+      {/* FAQ */}
+      <Section bg="muted">
         <SectionHeader overline="Common questions" title="Got a Question?" />
         <FadeIn>
           <Accordion className="mx-auto max-w-2xl">
@@ -231,14 +356,17 @@ export default function BookStudioPageEN() {
         </FadeIn>
       </Section>
 
+      {/* Bottom CTA */}
       <Section bg="dark">
         <FadeIn>
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Ready to train your clients here?</h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-white/70">Try the studio for free. No obligation.</p>
+            <p className="mx-auto mt-4 max-w-xl text-lg text-white/70">
+              Try the studio for free or book a session directly.
+            </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <ButtonLink href={acuityLinks.studioTrial} size="lg">
-                Book free trial session
+              <ButtonLink href="#pricing" size="lg">
+                Book a session
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink href={whatsappLinks.studioEn} variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10" external>
