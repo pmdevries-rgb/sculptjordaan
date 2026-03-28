@@ -14,7 +14,7 @@ const services = {
       title: "Personal Training",
       description:
         "Kies een personal trainer die past bij jouw doel. Eerste intake altijd gratis. Trainers bepalen hun eigen prijs — vanaf €45 per sessie.",
-      href: "/nl/vind-jouw-personal-trainer",
+      href: "/nl/boek-trainer",
       cta: "Bekijk trainers & tarieven",
       image: "/images/trainers/alex.jpg",
       imageAlt: "Personal Training bij SculptClub",
@@ -24,7 +24,7 @@ const services = {
       title: "Open Gym",
       description:
         "Open Gym in een rustige privé studio. Boek een slot van 60 min, max 3 personen tegelijk. Lidmaatschap vanaf €49/4 weken.",
-      href: "/nl/open-gym",
+      href: "/nl/boek-gym",
       cta: "Bekijk Open Gym & prijzen",
       image: "/images/studio/power-rack.jpeg",
       imageAlt: "Open Gym apparatuur bij SculptClub",
@@ -34,7 +34,7 @@ const services = {
       title: "Studio Huren",
       description:
         "Voor trainers. Huur de studio per sessie voor jouw klanten. Vanaf €12 per uur, of bespaar tot 23% met een kortingspakket. Geen contract.",
-      href: "/nl/studio-huren",
+      href: "/nl/boek-studio",
       cta: "Bekijk studio & tarieven",
       image: "/images/studio/studio-overview.jpeg",
       imageAlt: "SculptClub studio overzicht",
@@ -46,7 +46,7 @@ const services = {
       title: "Personal Training",
       description:
         "Choose a personal trainer who fits your goals. First intro always free. Trainers set their own rates — from €45 per session.",
-      href: "/en/find-personal-trainer",
+      href: "/en/book-trainer",
       cta: "View trainers & rates",
       image: "/images/trainers/alex.jpg",
       imageAlt: "Personal Training at SculptClub",
@@ -56,7 +56,7 @@ const services = {
       title: "Open Gym",
       description:
         "Open Gym in a quiet private studio. Book 60-min sessions, max 3 people at a time. Membership from €49/4 weeks.",
-      href: "/en/open-gym",
+      href: "/en/book-gym",
       cta: "View Open Gym & pricing",
       image: "/images/studio/power-rack.jpeg",
       imageAlt: "Open Gym equipment at SculptClub",
@@ -66,7 +66,7 @@ const services = {
       title: "Studio Rental",
       description:
         "For trainers. Rent the studio per session for your clients. From €12 per hour, or save up to 23% with a discount package. No contract.",
-      href: "/en/studio-rental",
+      href: "/en/book-studio",
       cta: "View studio & rates",
       image: "/images/studio/studio-overview.jpeg",
       imageAlt: "SculptClub studio overview",

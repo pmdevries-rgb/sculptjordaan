@@ -18,7 +18,7 @@ export function CtaBand({ locale }: { locale: Locale }) {
               icon: Users,
               label: "Gratis intake met een trainer",
               description: "45 min kennismaking — vrijblijvend",
-              href: "/nl/vind-jouw-personal-trainer",
+              href: "/nl/boek-trainer",
               external: false,
             },
             {
@@ -47,7 +47,7 @@ export function CtaBand({ locale }: { locale: Locale }) {
               icon: Users,
               label: "Free intro with a trainer",
               description: "45 min meet & greet — no obligation",
-              href: "/en/find-personal-trainer",
+              href: "/en/book-trainer",
               external: false,
             },
             {
