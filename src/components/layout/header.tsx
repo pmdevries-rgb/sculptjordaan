@@ -170,12 +170,13 @@ export function Header() {
               ))}
             </div>
 
-            {/* First time? — always visible, including mobile */}
+            {/* First time? — always visible, shorter text on mobile */}
             <Link
               href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-              className="flex items-center ml-1 px-2.5 sm:px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-all"
+              className="flex items-center ml-1 px-2 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-sm font-medium border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-all whitespace-nowrap"
             >
-              {locale === "nl" ? "Eerste keer?" : "First time?"}
+              <span className="sm:hidden">{locale === "nl" ? "Nieuw?" : "New?"}</span>
+              <span className="hidden sm:inline">{locale === "nl" ? "Eerste keer?" : "First time?"}</span>
             </Link>
 
             {/* BOOK button — always visible */}
