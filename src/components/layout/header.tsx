@@ -170,6 +170,14 @@ export function Header() {
               ))}
             </div>
 
+            {/* First time? — secondary CTA */}
+            <Link
+              href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
+              className="hidden sm:flex items-center ml-1 px-3 py-1.5 rounded-full text-sm font-medium border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-all"
+            >
+              {locale === "nl" ? "Eerste keer?" : "First time?"}
+            </Link>
+
             {/* BOOK button — always visible */}
             <button
               onClick={handleBookClick}
