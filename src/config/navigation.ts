@@ -91,12 +91,16 @@ export const footerLegal: Record<Locale, NavItem[]> = {
 
 /** Get the alternate locale path for language switching */
 export const alternateRoutes: Record<string, string> = {
-  // NL → EN
+  // NL → EN: pages
   "/": "/en",
   "/nl/vind-jouw-personal-trainer": "/en/find-personal-trainer",
   "/nl/open-gym": "/en/open-gym",
   "/nl/studio-huren": "/en/studio-rental",
   "/nl/boek": "/en/book",
+  "/nl/boek-studio": "/en/book-studio",
+  "/nl/boek-trainer": "/en/book-trainer",
+  "/nl/boek-gym": "/en/book-gym",
+  "/nl/prijzen": "/en/pricing",
   "/nl/over-ons": "/en/about",
   "/nl/reviews": "/en/reviews",
   "/nl/resultaten": "/en/results",
@@ -111,12 +115,34 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/privacybeleid": "/en/privacy-policy",
   "/nl/cookiebeleid": "/en/cookie-policy",
   "/nl/toegankelijkheid": "/en/accessibility-statement",
-  // EN → NL (reverse)
+  // NL → EN: trainer intake pages
+  "/nl/plan-gratis-intake-met-alex": "/en/plan-free-intro-with-alex",
+  "/nl/plan-gratis-intake-met-andrea": "/en/plan-free-intro-with-andrea",
+  "/nl/plan-gratis-intake-met-dara": "/en/plan-free-intro-with-dara",
+  "/nl/plan-gratis-intake-met-eva": "/en/plan-free-intro-with-eva",
+  "/nl/plan-gratis-intake-met-hamish": "/en/plan-free-intro-with-hamish",
+  // NL → EN: blog posts
+  "/nl/blog/afvallen-met-krachttraining": "/en/blog/weight-loss-strength-training",
+  "/nl/blog/consistent-blijven-met-sporten": "/en/blog/stay-consistent-exercise",
+  "/nl/blog/eerste-keer-sportschool-tips": "/en/blog/first-time-gym-tips",
+  "/nl/blog/krachttraining-voor-beginners": "/en/blog/strength-training-beginners-guide",
+  "/nl/blog/open-gym-vs-sportschool": "/en/blog/open-gym-vs-regular-gym",
+  "/nl/blog/personal-trainer-amsterdam": "/en/blog/personal-trainer-amsterdam",
+  "/nl/blog/personal-training-amsterdam-jordaan": "/en/blog/personal-training-amsterdam-jordaan",
+  "/nl/blog/prive-sportschool-vs-grote-sportschool": "/en/blog/private-gym-vs-big-box-gym",
+  "/nl/blog/sportschool-zonder-abonnement-amsterdam": "/en/blog/gym-without-membership-amsterdam",
+  "/nl/blog/studio-huren-personal-trainer-amsterdam": "/en/blog/studio-rental-personal-trainers-amsterdam",
+  "/nl/blog/wat-kost-personal-training-amsterdam": "/en/blog/personal-training-cost-amsterdam",
+  // EN → NL: pages
   "/en": "/",
   "/en/find-personal-trainer": "/nl/vind-jouw-personal-trainer",
   "/en/open-gym": "/nl/open-gym",
   "/en/studio-rental": "/nl/studio-huren",
   "/en/book": "/nl/boek",
+  "/en/book-studio": "/nl/boek-studio",
+  "/en/book-trainer": "/nl/boek-trainer",
+  "/en/book-gym": "/nl/boek-gym",
+  "/en/pricing": "/nl/prijzen",
   "/en/about": "/nl/over-ons",
   "/en/reviews": "/nl/reviews",
   "/en/results": "/nl/resultaten",
@@ -131,4 +157,22 @@ export const alternateRoutes: Record<string, string> = {
   "/en/privacy-policy": "/nl/privacybeleid",
   "/en/cookie-policy": "/nl/cookiebeleid",
   "/en/accessibility-statement": "/nl/toegankelijkheid",
+  // EN → NL: trainer intake pages
+  "/en/plan-free-intro-with-alex": "/nl/plan-gratis-intake-met-alex",
+  "/en/plan-free-intro-with-andrea": "/nl/plan-gratis-intake-met-andrea",
+  "/en/plan-free-intro-with-dara": "/nl/plan-gratis-intake-met-dara",
+  "/en/plan-free-intro-with-eva": "/nl/plan-gratis-intake-met-eva",
+  "/en/plan-free-intro-with-hamish": "/nl/plan-gratis-intake-met-hamish",
+  // EN → NL: blog posts
+  "/en/blog/weight-loss-strength-training": "/nl/blog/afvallen-met-krachttraining",
+  "/en/blog/stay-consistent-exercise": "/nl/blog/consistent-blijven-met-sporten",
+  "/en/blog/first-time-gym-tips": "/nl/blog/eerste-keer-sportschool-tips",
+  "/en/blog/strength-training-beginners-guide": "/nl/blog/krachttraining-voor-beginners",
+  "/en/blog/open-gym-vs-regular-gym": "/nl/blog/open-gym-vs-sportschool",
+  "/en/blog/personal-trainer-amsterdam": "/nl/blog/personal-trainer-amsterdam",
+  "/en/blog/personal-training-amsterdam-jordaan": "/nl/blog/personal-training-amsterdam-jordaan",
+  "/en/blog/private-gym-vs-big-box-gym": "/nl/blog/prive-sportschool-vs-grote-sportschool",
+  "/en/blog/gym-without-membership-amsterdam": "/nl/blog/sportschool-zonder-abonnement-amsterdam",
+  "/en/blog/studio-rental-personal-trainers-amsterdam": "/nl/blog/studio-huren-personal-trainer-amsterdam",
+  "/en/blog/personal-training-cost-amsterdam": "/nl/blog/wat-kost-personal-training-amsterdam",
 };
