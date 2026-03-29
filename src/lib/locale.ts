@@ -1,5 +1,4 @@
 import type { Locale } from "@/config/site";
-import { defaultLocale } from "@/config/site";
 import { alternateRoutes } from "@/config/navigation";
 
 /** Detect locale from pathname */
