@@ -23,7 +23,7 @@ const services = {
       icon: Dumbbell,
       title: "Open Gym",
       description:
-        "Open Gym in een rustige privé studio. Boek een slot van 60 min, max 3 personen tegelijk. Lidmaatschap vanaf €49/4 weken.",
+        "Open Gym in een rustige privé studio. Boek een slot van 60 min, max 3 personen tegelijk. Lidmaatschap vanaf €29/4 weken.",
       href: "/nl/boek-gym",
       cta: "Bekijk Open Gym & prijzen",
       image: "/images/studio/power-rack.jpeg",
@@ -55,7 +55,7 @@ const services = {
       icon: Dumbbell,
       title: "Open Gym",
       description:
-        "Open Gym in a quiet private studio. Book 60-min sessions, max 3 people at a time. Membership from €49/4 weeks.",
+        "Open Gym in a quiet private studio. Book 60-min sessions, max 3 people at a time. Membership from €29/4 weeks.",
       href: "/en/book-gym",
       cta: "View Open Gym & pricing",
       image: "/images/studio/power-rack.jpeg",

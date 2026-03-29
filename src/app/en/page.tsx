@@ -11,7 +11,7 @@ import { FaqJsonLd } from "@/components/seo/json-ld";
 import type { Metadata } from "next";
 
 const homeFaqs = [
-  { question: "How much does personal training cost at SculptClub?", answer: "Trainers set their own rates, starting from \u20AC49 per session. The intro is always free. We charge 0% commission \u2014 the price you see is what you pay." },
+  { question: "How much does personal training cost at SculptClub?", answer: "Trainers set their own rates, starting from \u20AC45 per session. The intro is always free. We charge 0% commission \u2014 the price you see is what you pay." },
   { question: "How does Open Gym work?", answer: "You train independently in our private studio with professional equipment. Schedule your sessions via our booking system, receive a door code and train on your time. From \u20AC5.75 per session." },
   { question: "Do I need a subscription?", answer: "No. Open Gym works on a 4-week cycle with no contract \u2014 cancel anytime. Personal training is booked per session. Studio rental is per hour or via discount packages." },
   { question: "Can I rent the studio for my own clients?", answer: "Yes! As a freelance trainer or physiotherapist, you can rent our studio from \u20AC12 per 60 minutes. We also offer discount packages up to 23% off." },
