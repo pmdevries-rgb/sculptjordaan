@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Users, Dumbbell, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
+import { trackHeroClick } from "@/lib/tracking";
 import type { Locale } from "@/config/site";
 
 export function Hero({ locale }: { locale: Locale }) {
@@ -15,8 +16,8 @@ export function Hero({ locale }: { locale: Locale }) {
         "Een private gym aan de gracht in de Jordaan. Train met een personal trainer, train zelfstandig of huur de studio. Geen abonnement, geen drukte — alleen jij en je training.",
       ctas: [
         { label: "Gratis Intake · Trainer", href: "/nl/boek-trainer", icon: Users },
-        { label: "Train Zelfstandig", href: "/nl/boek-gym", icon: Dumbbell },
         { label: "Studio Huren", href: "/nl/boek-studio", icon: Building2 },
+        { label: "Train Zelfstandig", href: "/nl/boek-gym", icon: Dumbbell },
       ],
       trust: "Eerste intake gratis · Geen abonnement · 5.0 ★ Google",
     },
@@ -27,8 +28,8 @@ export function Hero({ locale }: { locale: Locale }) {
         "A private gym on the canal in the Jordaan. Train with a personal trainer, train independently or rent the studio. No membership, no crowds — just you and your training.",
       ctas: [
         { label: "Free Intro · Trainer", href: "/en/book-trainer", icon: Users },
-        { label: "Train Solo", href: "/en/book-gym", icon: Dumbbell },
         { label: "Rent the Studio", href: "/en/book-studio", icon: Building2 },
+        { label: "Train Solo", href: "/en/book-gym", icon: Dumbbell },
       ],
       trust: "First intro free · No membership · 5.0 ★ Google",
     },
@@ -68,12 +69,13 @@ export function Hero({ locale }: { locale: Locale }) {
 
           {/* 3 CTAs — all clearly visible on dark background */}
           <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
-            {t.ctas.map((cta) => (
+            {t.ctas.map((cta, i) => (
               <ButtonLink
                 key={cta.href}
                 href={cta.href}
                 size="lg"
                 className="rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all"
+                onClick={() => trackHeroClick(cta.label, i + 1, locale)}
               >
                 <cta.icon className="mr-2 w-4 h-4" />
                 {cta.label}

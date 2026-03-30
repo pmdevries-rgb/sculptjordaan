@@ -34,6 +34,15 @@ export function trackBeginBooking(
   });
 }
 
+/** Track hero CTA clicks to measure conversion by position */
+export function trackHeroClick(label: string, position: number, locale: string) {
+  sendEvent("hero_cta_click", {
+    cta_label: label,
+    cta_position: String(position),
+    locale,
+  });
+}
+
 /** Returns true if a URL points to Acuity Scheduling */
 export function isAcuityUrl(url: string): boolean {
   return url.includes("acuityscheduling.com");
