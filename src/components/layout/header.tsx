@@ -175,7 +175,7 @@ export function Header() {
               href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
               className="flex items-center ml-1 px-2 sm:px-3 rounded-full text-[11px] sm:text-sm font-medium border border-border text-foreground/70 hover:text-foreground hover:border-foreground/40 transition-all whitespace-nowrap min-h-[32px] sm:min-h-[36px]"
             >
-              {locale === "nl" ? "Eerste keer?" : "First time?"}
+              {locale === "nl" ? "Nieuw hier?" : "New here?"}
             </Link>
 
             {/* BOOK button — always visible */}
