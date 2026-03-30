@@ -15,7 +15,7 @@ const services = {
       description:
         "Kies een personal trainer die past bij jouw doel. Eerste intake altijd gratis. Trainers bepalen hun eigen prijs — vanaf €45 per sessie.",
       href: "/nl/boek-trainer",
-      cta: "Bekijk trainers & tarieven",
+      cta: "Plan gratis intake",
       image: "/images/trainers/alex.jpg",
       imageAlt: "Personal Training bij SculptClub",
     },
@@ -47,7 +47,7 @@ const services = {
       description:
         "Choose a personal trainer who fits your goals. First intro always free. Trainers set their own rates — from €45 per session.",
       href: "/en/book-trainer",
-      cta: "View trainers & rates",
+      cta: "Book free intro",
       image: "/images/trainers/alex.jpg",
       imageAlt: "Personal Training at SculptClub",
     },
