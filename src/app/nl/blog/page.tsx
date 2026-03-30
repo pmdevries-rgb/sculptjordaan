@@ -117,6 +117,22 @@ const posts = [
     href: "/nl/blog/studio-huren-personal-trainer-amsterdam",
     date: "26 maart 2026",
   },
+  {
+    title: "Voedingscoach Amsterdam: Wat doet een diëtist en wanneer heb je er een nodig?",
+    excerpt:
+      "Wat is het verschil tussen een voedingscoach en diëtist? Wanneer helpt professioneel voedingsadvies écht? En hoe combineer je het met personal training.",
+    category: "Voeding",
+    href: "/nl/blog/voedingscoach-amsterdam",
+    date: "30 maart 2026",
+  },
+  {
+    title: "Fysiotherapeut als Personal Trainer in Amsterdam: Trainen met een blessure",
+    excerpt:
+      "Een blessure hoeft geen einde van je training te betekenen. Ontdek hoe een fysiotherapeut als personal trainer je veilig laat doortrainen en sneller laat herstellen.",
+    category: "Revalidatie",
+    href: "/nl/blog/fysiotherapeut-personal-trainer-amsterdam",
+    date: "30 maart 2026",
+  },
 ];
 
 export default function BlogPageNL() {

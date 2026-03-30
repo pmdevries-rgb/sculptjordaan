@@ -117,6 +117,22 @@ const posts = [
     href: "/en/blog/studio-rental-personal-trainers-amsterdam",
     date: "March 26, 2026",
   },
+  {
+    title: "Nutrition Coach Amsterdam: Do You Need a Dietitian for Your Training?",
+    excerpt:
+      "What's the difference between a nutrition coach and a registered dietitian? When does professional nutrition advice actually make a difference in your results?",
+    category: "Nutrition",
+    href: "/en/blog/nutrition-coach-amsterdam",
+    date: "March 30, 2026",
+  },
+  {
+    title: "Physiotherapist as Personal Trainer in Amsterdam: Training with an Injury",
+    excerpt:
+      "An injury doesn't have to mean the end of your training. Discover how a physiotherapist-personal trainer helps you train safely and recover faster.",
+    category: "Rehabilitation",
+    href: "/en/blog/physiotherapist-personal-trainer-amsterdam",
+    date: "March 30, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
