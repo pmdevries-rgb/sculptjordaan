@@ -52,6 +52,10 @@ const nextConfig: NextConfig = {
       { source: "/en/how-open-gym-works", destination: "/en/open-gym", permanent: true },
       { source: "/en/start", destination: "/en/book", permanent: true },
 
+      // Campaign landing pages — short URLs for Instagram bio / TikTok / ads
+      { source: "/gratis-intake", destination: "/nl/gratis-intake", permanent: false },
+      { source: "/free-intro", destination: "/en/free-intro", permanent: false },
+
       // Utility pages
       { source: "/acuity/:path*", destination: "/nl/boek", permanent: true },
       { source: "/coming-soon", destination: "/", permanent: true },

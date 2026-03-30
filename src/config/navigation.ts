@@ -163,6 +163,8 @@ export const alternateRoutes: Record<string, string> = {
   "/en/plan-free-intro-with-dara": "/nl/plan-gratis-intake-met-dara",
   "/en/plan-free-intro-with-eva": "/nl/plan-gratis-intake-met-eva",
   "/en/plan-free-intro-with-hamish": "/nl/plan-gratis-intake-met-hamish",
+  // Campaign landing pages
+  "/nl/gratis-intake": "/en/free-intro",
   // EN → NL: blog posts
   "/en/blog/weight-loss-strength-training": "/nl/blog/afvallen-met-krachttraining",
   "/en/blog/stay-consistent-exercise": "/nl/blog/consistent-blijven-met-sporten",
@@ -175,4 +177,6 @@ export const alternateRoutes: Record<string, string> = {
   "/en/blog/gym-without-membership-amsterdam": "/nl/blog/sportschool-zonder-abonnement-amsterdam",
   "/en/blog/studio-rental-personal-trainers-amsterdam": "/nl/blog/studio-huren-personal-trainer-amsterdam",
   "/en/blog/personal-training-cost-amsterdam": "/nl/blog/wat-kost-personal-training-amsterdam",
+  // Campaign landing pages
+  "/en/free-intro": "/nl/gratis-intake",
 };
