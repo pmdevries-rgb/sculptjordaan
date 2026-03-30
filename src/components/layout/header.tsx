@@ -146,7 +146,7 @@ export function Header() {
               alt="SculptClub logo"
               width={120}
               height={9}
-              className="h-2.5 sm:h-4 w-auto dark:invert"
+              className="h-2.5 sm:h-3 w-auto dark:invert"
               priority
             />
           </Link>
@@ -173,7 +173,7 @@ export function Header() {
             {/* First time? — always visible */}
             <Link
               href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-              className="flex items-center ml-1 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-sm font-medium border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-all whitespace-nowrap"
+              className="flex items-center ml-1 px-2 sm:px-3 rounded-full text-[11px] sm:text-sm font-medium border border-border text-foreground/70 hover:text-foreground hover:border-foreground/40 transition-all whitespace-nowrap min-h-[32px] sm:min-h-[36px]"
             >
               {locale === "nl" ? "Eerste keer?" : "First time?"}
             </Link>
