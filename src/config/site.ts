@@ -28,6 +28,8 @@ export const siteConfig = {
   hours: "Daily 06:30–22:00",
   instagram: "https://instagram.com/sculptclubjordaan",
   instagramHandle: "@sculptclubjordaan",
+  tiktok: "https://www.tiktok.com/@sculptclub.jordaan",
+  tiktokHandle: "@sculptclub.jordaan",
   google: "https://g.page/sculptclub",
   rating: { value: 5.0, count: 8 },
   founded: "2025",

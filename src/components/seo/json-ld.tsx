@@ -35,7 +35,7 @@ export function LocalBusinessJsonLd() {
     },
     priceRange: "€€",
     image: `${siteConfig.url}/images/og-default.jpg`,
-    sameAs: [siteConfig.instagram],
+    sameAs: [siteConfig.instagram, siteConfig.tiktok],
     foundingDate: siteConfig.founded,
   };
 
@@ -54,7 +54,7 @@ export function OrganizationJsonLd() {
     name: siteConfig.name,
     url: siteConfig.url,
     logo: `${siteConfig.url}/images/logo.png`,
-    sameAs: [siteConfig.instagram],
+    sameAs: [siteConfig.instagram, siteConfig.tiktok],
     contactPoint: {
       "@type": "ContactPoint",
       telephone: siteConfig.phone,
