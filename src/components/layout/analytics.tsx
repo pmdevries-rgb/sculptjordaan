@@ -1,7 +1,7 @@
 import Script from "next/script";
 import { siteConfig } from "@/config/site";
 
-const { ga4, googleAds, fbPixel, clarity, tiktokPixel } = siteConfig.analytics;
+const { ga4, googleAds, googleAdsConversion, fbPixel, clarity, tiktokPixel } = siteConfig.analytics;
 
 export function Analytics() {
   return (
@@ -52,6 +52,28 @@ export function Analytics() {
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           })(window, document, "clarity", "script", "${clarity}");
+        `}
+      </Script>
+
+      {/* Google Ads conversion — fires when visitor clicks any Acuity booking link */}
+      <Script id="gads-conversion" strategy="afterInteractive">
+        {`
+          (function() {
+            document.addEventListener('click', function(e) {
+              var el = e.target.closest('a[href]');
+              if (el && el.href && el.href.includes('acuityscheduling.com')) {
+                if (typeof gtag === 'function') {
+                  gtag('event', 'conversion', { send_to: '${googleAds}/${googleAdsConversion}' });
+                }
+                if (typeof fbq === 'function') {
+                  fbq('track', 'Lead');
+                }
+                if (typeof ttq !== 'undefined') {
+                  ttq.track('SubmitForm');
+                }
+              }
+            }, true);
+          })();
         `}
       </Script>
 

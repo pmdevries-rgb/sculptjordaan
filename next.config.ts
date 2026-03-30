@@ -50,7 +50,8 @@ const nextConfig: NextConfig = {
       { source: "/en/rent-the-studio-how-sculptclub-works", destination: "/en/studio-rental", permanent: true },
       { source: "/nl/zo-werkt-open-gym", destination: "/nl/open-gym", permanent: true },
       { source: "/en/how-open-gym-works", destination: "/en/open-gym", permanent: true },
-      { source: "/en/start", destination: "/en/book", permanent: true },
+      { source: "/en/start", destination: "/nl/gratis-intake", permanent: false },
+      { source: "/start", destination: "/nl/gratis-intake", permanent: false },
 
       // Campaign landing pages — short URLs for Instagram bio / TikTok / ads
       { source: "/gratis-intake", destination: "/nl/gratis-intake", permanent: false },
