@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, MessageCircle, Users, Dumbbell, Building2 } from "lucide-react";
+import { MessageCircle, Users, Dumbbell, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Section, FadeIn } from "@/components/sections/section";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
