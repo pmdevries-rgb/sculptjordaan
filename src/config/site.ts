@@ -44,8 +44,7 @@ export const siteConfig = {
     googleAdsConversion: "QW0mCPOF_YocENXE5o9C",
     fbPixel: "4350118535216982",
     clarity: "vx7zcg6zys",
-    // TODO: replace with real TikTok pixel ID from ads.tiktok.com → Assets → Events
-    tiktokPixel: "",
+    tiktokPixel: "D75710BC77UDBCCMHF60",
   },
 } as const;
 
