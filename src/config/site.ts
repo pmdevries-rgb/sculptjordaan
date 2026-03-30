@@ -9,8 +9,8 @@ export const siteConfig = {
     en: "Boutique Personal Training — Amsterdam Jordaan",
   },
   description: {
-    nl: "Privé personal training studio in de Jordaan, Amsterdam. Personal training, Open Gym en studio verhuur. Geen abonnement, geen drukte.",
-    en: "Private personal training studio in the Jordaan, Amsterdam. Personal training, Open Gym and studio rental. No membership, no crowds.",
+    nl: "Privé personal training studio in de Jordaan, Amsterdam. Gratis intake — trainers vanaf €45/sessie. Open Gym & studio verhuur. Geen abonnement.",
+    en: "Private personal training studio in the Jordaan, Amsterdam. Free intro — trainers from €45/session. Open Gym & studio rental. No membership.",
   },
   url: "https://sculptclub.nl",
   ogImage: "/images/og-default.jpg",

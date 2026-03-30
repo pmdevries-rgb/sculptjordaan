@@ -35,10 +35,10 @@ const instrumentSans = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.subtitle.en}`,
+    default: `${siteConfig.name} — ${siteConfig.subtitle.nl}`,
     template: `%s | ${siteConfig.name}`,
   },
-  description: siteConfig.description.en,
+  description: siteConfig.description.nl,
   openGraph: {
     type: "website",
     locale: "nl_NL",
