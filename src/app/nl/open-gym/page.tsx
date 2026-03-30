@@ -127,7 +127,7 @@ const faqs = [
   },
   {
     q: "Wat als ik mijn sessie moet annuleren?",
-    a: "Annuleren of verzetten kan altijd gratis via het boekingssysteem. Bij te laat annuleren wordt de sessie in mindering gebracht op je tegoed.",
+    a: "Annuleren of verzetten kan altijd gratis via het boekingssysteem — geen kosten, geen uitzonderingen.",
   },
   {
     q: "Is het echt een lidmaatschap?",

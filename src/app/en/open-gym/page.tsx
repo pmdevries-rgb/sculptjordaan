@@ -127,7 +127,7 @@ const faqs = [
   },
   {
     q: "What if I need to cancel?",
-    a: "You can always cancel or reschedule for free via the booking system. Late cancellations will be deducted from your credit.",
+    a: "Cancel or reschedule anytime via the booking system — always free, no exceptions.",
   },
   {
     q: "Is it really a membership?",
