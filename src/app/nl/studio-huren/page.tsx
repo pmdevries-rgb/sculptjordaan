@@ -29,9 +29,9 @@ import {
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Studio Huren — Priv\u00e9 Trainingsruimte | SculptClub Amsterdam Jordaan",
+  title: "Studio Huren Personal Trainer Amsterdam | SculptClub Jordaan",
   description:
-    "Huur onze priv\u00e9 studio in de Jordaan voor personal training of small group sessies. Vanaf \u20ac12/uur, geen commissie. Professionele apparatuur, flexibel per uur.",
+    "Huur een privé trainingsruimte in Amsterdam Jordaan. Professionele studio voor freelance personal trainers & fysiotherapeuten. Vanaf €12/uur, geen commissie, flexibel per sessie.",
   alternates: {
     canonical: "/nl/studio-huren",
     languages: {
@@ -106,10 +106,10 @@ export default function StudioRentalPageNL() {
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Studio Huren","url":"/nl/studio-huren"}]} />
       <ServiceJsonLd
-        name="Studio Verhuur"
-        description="Huur onze privé personal training studio in de Jordaan, Amsterdam. Professionele apparatuur, flexibel per uur, geen commissie."
+        name="Studio Verhuur — Personal Trainer Amsterdam"
+        description="Huur een privé trainingsruimte in Amsterdam Jordaan voor freelance personal trainers en fysiotherapeuten. Professionele apparatuur, flexibel per uur, geen commissie."
         url="/nl/studio-huren"
-        priceRange="Vanaf €25 per uur"
+        priceRange="Vanaf €12 per uur"
       />
       <FaqJsonLd faqs={faqJsonLdData} />
       {/* Hero */}
@@ -119,8 +119,8 @@ export default function StudioRentalPageNL() {
             <SectionHeader
           as="h1"
               overline="Studio Verhuur"
-              title="Studio huren"
-              description="Train je klanten op jouw manier. Betaal per sessie of bespaar 10-23% met een kortingspakket. Geen abonnement. Geen verplichtingen."
+              title="Studio huren voor personal trainers in Amsterdam"
+              description="Train je klanten op jouw manier in een privé studio in de Jordaan. Betaal per sessie of bespaar 10-23% met een kortingspakket. Geen abonnement. Geen commissie."
               center={false}
             />
             <FadeIn className="flex flex-col sm:flex-row gap-3">
@@ -362,8 +362,55 @@ export default function StudioRentalPageNL() {
         </div>
       </Section>
 
-      {/* Gallery */}
+      {/* For freelance trainers */}
       <Section>
+        <SectionHeader
+          overline="Voor ZZP-trainers & fysiotherapeuten"
+          title="Jouw eigen studio, per uur"
+          description="Geen vaste huurkosten, geen commissie op je omzet. Huur alleen wanneer je een sessie hebt."
+        />
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <FadeIn>
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg">Wat je meeneemt</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {[
+                  "Geldige beroepsaansprakelijkheidsverzekering (BA)",
+                  "Jouw eigen klanten en tarieven",
+                  "Kennis en expertise als trainer of fysiotherapeut",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg">Wat wij bieden</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {[
+                  "Volledig uitgeruste privé studio voor 1:1 en small group",
+                  "Geen commissie — jij houdt 100% van je sessietarief",
+                  "Flexibel boeken: alleen wanneer jij een klant hebt",
+                  "Deurcode per WhatsApp de avond van tevoren",
+                  "Professionele apparatuur: squat rack, kabelmachine, dumbbells 4-40 kg, Echo Bike en meer",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeIn>
+        </div>
+      </Section>
+
+      {/* Gallery */}
+      <Section bg="muted">
         <SectionHeader overline="De studio" title="Bekijk de Ruimte" />
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {galleryImages.map((img, i) => (

@@ -141,6 +141,14 @@ const posts = [
     href: "/en/blog/free-intro-personal-trainer-amsterdam",
     date: "April 1, 2026",
   },
+  {
+    title: "Gym Rental Per Hour Amsterdam: Flexible Studio for Freelance Trainers",
+    excerpt:
+      "Looking for a gym or training studio to rent per hour in Amsterdam? Everything about flexible studio hire for freelance personal trainers and physiotherapists.",
+    category: "For Trainers",
+    href: "/en/blog/gym-rental-per-hour-amsterdam",
+    date: "April 1, 2026",
+  },
 ];
 
 export default function BlogPageEN() {

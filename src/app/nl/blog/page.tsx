@@ -141,6 +141,14 @@ const posts = [
     href: "/nl/blog/gratis-intake-personal-trainer-amsterdam",
     date: "1 april 2026",
   },
+  {
+    title: "Gym huren per uur Amsterdam: flexibele trainingsruimte voor ZZP-trainers",
+    excerpt:
+      "Op zoek naar een gym of trainingsruimte per uur in Amsterdam? Alles over flexibele studio verhuur voor freelance personal trainers en fysiotherapeuten. Vanaf €12/uur.",
+    category: "Voor Trainers",
+    href: "/nl/blog/gym-huren-per-uur-amsterdam",
+    date: "1 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {
