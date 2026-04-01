@@ -136,6 +136,7 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/blog/voedingscoach-amsterdam": "/en/blog/nutrition-coach-amsterdam",
   "/nl/blog/fysiotherapeut-personal-trainer-amsterdam": "/en/blog/physiotherapist-personal-trainer-amsterdam",
   "/nl/blog/gratis-intake-personal-trainer-amsterdam": "/en/blog/free-intro-personal-trainer-amsterdam",
+  "/nl/blog/gym-huren-per-uur-amsterdam": "/en/blog/gym-rental-per-hour-amsterdam",
   // EN → NL: pages
   "/en": "/",
   "/en/find-personal-trainer": "/nl/vind-jouw-personal-trainer",
@@ -183,6 +184,7 @@ export const alternateRoutes: Record<string, string> = {
   "/en/blog/nutrition-coach-amsterdam": "/nl/blog/voedingscoach-amsterdam",
   "/en/blog/physiotherapist-personal-trainer-amsterdam": "/nl/blog/fysiotherapeut-personal-trainer-amsterdam",
   "/en/blog/free-intro-personal-trainer-amsterdam": "/nl/blog/gratis-intake-personal-trainer-amsterdam",
+  "/en/blog/gym-rental-per-hour-amsterdam": "/nl/blog/gym-huren-per-uur-amsterdam",
   // Campaign landing pages
   "/en/free-intro": "/nl/gratis-intake",
 };

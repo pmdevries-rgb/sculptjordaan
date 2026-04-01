@@ -29,9 +29,9 @@ import {
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Studio Rental — Private Training Space | SculptClub Amsterdam Jordaan",
+  title: "Studio Rental for Personal Trainers Amsterdam | SculptClub Jordaan",
   description:
-    "Rent our private studio in the Jordaan for personal training or small group sessions. From \u20ac12/hour, no commission. Professional equipment, flexible by the hour.",
+    "Rent a private training studio in Amsterdam Jordaan. Purpose-built for freelance personal trainers & physiotherapists. From €12/hour, no commission, flexible per session.",
   alternates: {
     canonical: "/en/studio-rental",
     languages: {
@@ -106,10 +106,10 @@ export default function StudioRentalPageEN() {
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Studio Rental","url":"/en/studio-rental"}]} />
       <ServiceJsonLd
-        name="Studio Rental"
-        description="Rent our private personal training studio in the Jordaan, Amsterdam. Professional equipment, flexible by the hour, no commission."
+        name="Studio Rental — Personal Trainer Amsterdam"
+        description="Rent a private training studio in Amsterdam Jordaan for freelance personal trainers and physiotherapists. Professional equipment, flexible by the hour, no commission."
         url="/en/studio-rental"
-        priceRange="From €25 per hour"
+        priceRange="From €12 per hour"
       />
       <FaqJsonLd faqs={faqJsonLdData} />
       {/* Hero */}
@@ -119,8 +119,8 @@ export default function StudioRentalPageEN() {
             <SectionHeader
           as="h1"
               overline="Studio Rental"
-              title="Rent the Studio"
-              description="Train your clients your way. Pay per session or save 10-23% with a discount package. No subscription. No obligations."
+              title="Studio rental for personal trainers in Amsterdam"
+              description="Train your clients your way in a private studio in the Jordaan. Pay per session or save 10-23% with a discount package. No subscription. No commission."
               center={false}
             />
             <FadeIn className="flex flex-col sm:flex-row gap-3">
@@ -362,8 +362,55 @@ export default function StudioRentalPageEN() {
         </div>
       </Section>
 
-      {/* Gallery */}
+      {/* For freelance trainers */}
       <Section>
+        <SectionHeader
+          overline="For freelance trainers & physiotherapists"
+          title="Your own studio, by the hour"
+          description="No fixed rental costs, no commission on your revenue. Rent only when you have a session."
+        />
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <FadeIn>
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg">What you bring</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {[
+                  "Valid professional liability insurance",
+                  "Your own clients and rates",
+                  "Your knowledge and expertise as a trainer or physiotherapist",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg">What we provide</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {[
+                  "Fully equipped private studio for 1:1 and small group",
+                  "Zero commission — you keep 100% of your session rate",
+                  "Flexible booking: only when you have a client",
+                  "Door code via WhatsApp the evening before",
+                  "Professional equipment: squat rack, cable machine, dumbbells 4–40 kg, Echo Bike and more",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeIn>
+        </div>
+      </Section>
+
+      {/* Gallery */}
+      <Section bg="muted">
         <SectionHeader overline="The studio" title="See the Space" />
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {galleryImages.map((img, i) => (
