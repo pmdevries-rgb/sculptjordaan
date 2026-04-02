@@ -205,6 +205,14 @@ const posts = [
     href: "/nl/blog/personal-trainer-de-pijp-amsterdam",
     date: "2 april 2026",
   },
+  {
+    title: "Boutique gym vs sportschool keten: wat past bij jou?",
+    excerpt:
+      "Twijfel je tussen een boutique gym en een grote sportschool? Vergelijk prijs, sfeer, apparatuur en begeleiding.",
+    category: "Vergelijking",
+    href: "/nl/blog/boutique-gym-vs-sportschool-keten",
+    date: "2 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {

@@ -205,6 +205,14 @@ const posts = [
     href: "/en/blog/personal-trainer-de-pijp-amsterdam",
     date: "April 2, 2026",
   },
+  {
+    title: "Boutique Gym vs Big Chain Gym: What's Right for You?",
+    excerpt:
+      "Deciding between a boutique gym and a big chain? Compare price, atmosphere, equipment and results.",
+    category: "Comparison",
+    href: "/en/blog/boutique-gym-vs-big-chain-gym",
+    date: "April 2, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
