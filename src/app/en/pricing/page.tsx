@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { acuityLinks } from "@/config/acuity";
-import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
 import {
   CreditCard,
   ArrowRight,
@@ -101,6 +101,24 @@ export default function PricingPageEN() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Pricing","url":"/en/pricing"}]} />
+      <ServiceJsonLd
+        name="Personal Training"
+        description="Personal training in a private studio in Amsterdam Jordaan. Free intro session, trainers from €45/session, 0% commission."
+        url="/en/pricing"
+        priceRange="From €45/session"
+      />
+      <ServiceJsonLd
+        name="Open Gym"
+        description="Independent training in a private studio in Amsterdam Jordaan. 60-minute sessions, max 3 people. From €29/4 weeks."
+        url="/en/pricing"
+        priceRange="€29–€89/4 weeks"
+      />
+      <ServiceJsonLd
+        name="Studio Rental"
+        description="Rent a fully equipped personal training studio in Amsterdam Jordaan. From €12/hour, discount packages up to 23% off."
+        url="/en/pricing"
+        priceRange="From €12/hour"
+      />
 
       {/* Hero */}
       <Section>

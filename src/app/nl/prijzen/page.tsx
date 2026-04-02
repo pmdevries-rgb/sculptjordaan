@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { acuityLinks } from "@/config/acuity";
-import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
 import {
   CreditCard,
   ArrowRight,
@@ -101,6 +101,24 @@ export default function PricingPageNL() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Prijzen","url":"/nl/prijzen"}]} />
+      <ServiceJsonLd
+        name="Personal Training"
+        description="Personal training in een privé studio in Amsterdam Jordaan. Gratis intake, trainers vanaf €45/sessie, 0% commissie."
+        url="/nl/prijzen"
+        priceRange="Vanaf €45/sessie"
+      />
+      <ServiceJsonLd
+        name="Open Gym"
+        description="Zelfstandig trainen in een privé studio in Amsterdam Jordaan. Sessies van 60 min, max 3 personen. Vanaf €29/4 weken."
+        url="/nl/prijzen"
+        priceRange="€29–€89/4 weken"
+      />
+      <ServiceJsonLd
+        name="Studio Verhuur"
+        description="Huur een volledig uitgeruste personal training studio in Amsterdam Jordaan. Vanaf €12/uur, kortingspakketten tot 23% korting."
+        url="/nl/prijzen"
+        priceRange="Vanaf €12/uur"
+      />
 
       {/* Hero */}
       <Section>
