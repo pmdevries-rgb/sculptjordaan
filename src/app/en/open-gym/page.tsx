@@ -169,11 +169,11 @@ export default function OpenGymPageEN() {
           description="Book 60-minute sessions in a quiet, fully equipped studio in the Jordaan. Max. 3 people per slot."
         />
         <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <ButtonLink href={acuityLinks.openGymBook} size="lg">
-            Already a member? Reserve your hour
+          <ButtonLink href={acuityLinks.openGymTrial} size="lg">
+            Book free trial session
           </ButtonLink>
-          <ButtonLink href={acuityLinks.generic} size="lg" variant="outline">
-            New? Start with a free trial
+          <ButtonLink href={acuityLinks.openGymBook} size="lg" variant="outline">
+            Already a member? Reserve your hour
           </ButtonLink>
         </FadeIn>
       </Section>

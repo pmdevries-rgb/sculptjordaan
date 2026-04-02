@@ -74,6 +74,11 @@ export default function BoekGymPageNL() {
           <p className="mt-4 text-xs text-muted-foreground">
             Vanaf €7,25/sessie · Privé studio · Geen contract · Dagelijks 06:30–22:00
           </p>
+          <div className="mt-6 pt-4 border-t border-border/50">
+            <ButtonLink href={acuityLinks.openGymBook} size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">
+              Al lid? Reserveer jouw uur →
+            </ButtonLink>
+          </div>
         </div>
       </Section>
 

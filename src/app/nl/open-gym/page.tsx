@@ -169,11 +169,11 @@ export default function OpenGymPageNL() {
           description="Boek sessies van 60 minuten in een rustige, volledig uitgeruste studio in de Jordaan. Max. 3 personen per slot."
         />
         <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <ButtonLink href={acuityLinks.openGymBook} size="lg">
-            Al lid? Reserveer jouw uur
+          <ButtonLink href={acuityLinks.openGymTrial} size="lg">
+            Gratis proefles boeken
           </ButtonLink>
-          <ButtonLink href={acuityLinks.generic} size="lg" variant="outline">
-            Nieuw? Begin met een gratis proefles
+          <ButtonLink href={acuityLinks.openGymBook} size="lg" variant="outline">
+            Al lid? Reserveer jouw uur
           </ButtonLink>
         </FadeIn>
       </Section>
