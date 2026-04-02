@@ -142,6 +142,16 @@ export default function BlogPostNL1() {
               </p>
             </div>
 
+            {/* Related articles */}
+            <div className="mt-12 border-t border-border/50 pt-8">
+              <h3 className="text-lg font-bold mb-4">Meer lezen</h3>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <a href="/nl/blog/personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer in Amsterdam: zo vind je de beste match</p></a>
+                <a href="/nl/blog/wat-kost-personal-training-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Wat kost personal training in Amsterdam?</p></a>
+                <a href="/nl/blog/sportschool-jordaan-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Sportschool Jordaan Amsterdam</p></a>
+                <a href="/nl/blog/personal-training-afvallen-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal training voor afvallen</p></a>
+              </div>
+            </div>
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Plan je gratis intake</h3>
               <p className="text-muted-foreground mb-6">
