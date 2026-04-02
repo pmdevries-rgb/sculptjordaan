@@ -120,18 +120,19 @@ export default function PricingPageNL() {
         priceRange="Vanaf €12/uur"
       />
       <OfferCatalogJsonLd
-        name="Open Gym Abonnementen"
+        catalogName="Open Gym Abonnementen"
         description="Zelfstandig trainen in een privé studio in Amsterdam Jordaan. Sessies van 60 min, max 3 personen."
         url="/nl/prijzen"
+        recurring
         offers={[
-          { name: "Instapplan — 4 sessies", description: "4 sessies per 4 weken, €7,25 per sessie", price: 29, eligibleDuration: "P4W" },
-          { name: "Populair — 8 sessies", description: "8 sessies per 4 weken, €6,13 per sessie", price: 49, eligibleDuration: "P4W" },
-          { name: "Intensief — 12 sessies", description: "12 sessies per 4 weken, €5,75 per sessie", price: 69, eligibleDuration: "P4W" },
-          { name: "Onbeperkt", description: "Onbeperkt trainen per 4 weken", price: 89, eligibleDuration: "P4W" },
+          { name: "Instapplan — 4 sessies", description: "4 sessies per 4 weken, €7,25 per sessie", price: 29 },
+          { name: "Populair — 8 sessies", description: "8 sessies per 4 weken, €6,13 per sessie", price: 49 },
+          { name: "Intensief — 12 sessies", description: "12 sessies per 4 weken, €5,75 per sessie", price: 69 },
+          { name: "Onbeperkt", description: "Onbeperkt trainen per 4 weken", price: 89 },
         ]}
       />
       <OfferCatalogJsonLd
-        name="Studio Verhuur Tarieven"
+        catalogName="Studio Verhuur Tarieven"
         description="Huur een volledig uitgeruste personal training studio in Amsterdam Jordaan."
         url="/nl/prijzen"
         offers={[

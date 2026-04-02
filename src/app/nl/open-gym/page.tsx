@@ -148,14 +148,15 @@ export default function OpenGymPageNL() {
         priceRange="€29 - €89 per 4 weken"
       />
       <OfferCatalogJsonLd
-        name="Open Gym Abonnementen"
+        catalogName="Open Gym Abonnementen"
         description="Zelfstandig trainen in een privé studio in de Jordaan, Amsterdam. Boek sessies van 60 minuten."
         url="/nl/open-gym"
+        recurring
         offers={[
-          { name: "Instapplan — 4 sessies", description: "4 sessies per 4 weken, €7,25 per sessie", price: 29, eligibleDuration: "P4W" },
-          { name: "Populair — 8 sessies", description: "8 sessies per 4 weken, €6,13 per sessie", price: 49, eligibleDuration: "P4W" },
-          { name: "Intensief — 12 sessies", description: "12 sessies per 4 weken, €5,75 per sessie", price: 69, eligibleDuration: "P4W" },
-          { name: "Onbeperkt", description: "Onbeperkt trainen per 4 weken", price: 89, eligibleDuration: "P4W" },
+          { name: "Instapplan — 4 sessies", description: "4 sessies per 4 weken, €7,25 per sessie", price: 29 },
+          { name: "Populair — 8 sessies", description: "8 sessies per 4 weken, €6,13 per sessie", price: 49 },
+          { name: "Intensief — 12 sessies", description: "12 sessies per 4 weken, €5,75 per sessie", price: 69 },
+          { name: "Onbeperkt", description: "Onbeperkt trainen per 4 weken", price: 89 },
         ]}
       />
       <FaqJsonLd faqs={faqJsonLdData} />

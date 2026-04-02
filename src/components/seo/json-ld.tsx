@@ -69,7 +69,9 @@ export function LocalBusinessJsonLd() {
           name: "Studio Rental",
           itemListElement: [
             { "@type": "Offer", itemOffered: { "@type": "Service", name: "Half Studio — 60 min" }, price: 12, priceCurrency: "EUR" },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Half Studio — 90 min" }, price: 17, priceCurrency: "EUR" },
             { "@type": "Offer", itemOffered: { "@type": "Service", name: "Full Studio — 60 min" }, price: 17, priceCurrency: "EUR" },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Full Studio — 90 min" }, price: 24, priceCurrency: "EUR" },
           ],
         },
       ],
@@ -245,57 +247,46 @@ export function BlogPostingJsonLd({
 }
 
 export function OfferCatalogJsonLd({
-  name,
+  catalogName,
   description,
   url,
+  recurring,
   offers,
 }: {
-  name: string;
+  catalogName: string;
   description: string;
   url: string;
+  recurring?: boolean;
   offers: {
     name: string;
     description: string;
     price: number;
     priceCurrency?: string;
-    eligibleDuration?: string;
     url?: string;
   }[];
 }) {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name,
+    "@type": "OfferCatalog",
+    "@id": `${siteConfig.url}${url}#${catalogName.toLowerCase().replace(/\s+/g, "-")}`,
+    name: catalogName,
     description,
     url: `${siteConfig.url}${url}`,
-    provider: {
-      "@type": "LocalBusiness",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
-    areaServed: {
-      "@type": "City",
-      name: "Amsterdam",
-    },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name,
-      itemListElement: offers.map((offer) => ({
-        "@type": "Offer",
-        name: offer.name,
-        description: offer.description,
-        price: offer.price,
-        priceCurrency: offer.priceCurrency || "EUR",
-        ...(offer.eligibleDuration
-          ? { eligibleDuration: { "@type": "QuantitativeValue", value: 4, unitCode: "WEE" } }
-          : {}),
-        ...(offer.url ? { url: `${siteConfig.url}${offer.url}` } : {}),
-        seller: {
-          "@type": "LocalBusiness",
-          name: siteConfig.name,
-        },
-      })),
-    },
+    itemListElement: offers.map((offer) => ({
+      "@type": "Offer",
+      name: offer.name,
+      description: offer.description,
+      price: offer.price,
+      priceCurrency: offer.priceCurrency || "EUR",
+      ...(recurring
+        ? { eligibleDuration: { "@type": "QuantitativeValue", value: 4, unitCode: "WEE" } }
+        : {}),
+      ...(offer.url ? { url: `${siteConfig.url}${offer.url}` } : {}),
+      seller: {
+        "@type": "LocalBusiness",
+        name: siteConfig.name,
+      },
+    })),
   };
 
   return (
