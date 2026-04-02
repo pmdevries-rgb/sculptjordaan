@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { whatsappLinks } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { CheckCircle, MessageCircle, ArrowRight, Calendar, Users, Dumbbell } from "lucide-react";
 import Image from "next/image";
@@ -63,7 +63,7 @@ export default function BoekTrainerPageNL() {
             Gratis kennismaking van 30 min. Geen abonnement, altijd gratis annuleren.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <ButtonLink href={acuityLinks.generic} size="xl" className="w-full sm:w-auto">
+            <ButtonLink href="/nl/vind-jouw-personal-trainer" size="xl" className="w-full sm:w-auto">
               Plan gratis intake
               <ArrowRight className="ml-2 h-4 w-4" />
             </ButtonLink>
@@ -180,7 +180,7 @@ export default function BoekTrainerPageNL() {
               Plan je gratis intake — je hoort meestal binnen een uur.
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <ButtonLink href={acuityLinks.generic} size="lg">
+              <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg">
                 Plan gratis intake
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
