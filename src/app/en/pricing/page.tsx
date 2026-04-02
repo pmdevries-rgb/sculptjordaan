@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { acuityLinks } from "@/config/acuity";
-import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import {
   CreditCard,
   ArrowRight,
@@ -101,6 +101,47 @@ export default function PricingPageEN() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Pricing","url":"/en/pricing"}]} />
+      <ServiceJsonLd
+        name="Personal Training"
+        description="Personal training in a private studio in Amsterdam Jordaan. Free intro session, trainers from €45/session, 0% commission."
+        url="/en/pricing"
+        priceRange="From €45/session"
+      />
+      <ServiceJsonLd
+        name="Open Gym"
+        description="Independent training in a private studio in Amsterdam Jordaan. 60-minute sessions, max 3 people. From €29/4 weeks."
+        url="/en/pricing"
+        priceRange="€29–€89/4 weeks"
+      />
+      <ServiceJsonLd
+        name="Studio Rental"
+        description="Rent a fully equipped personal training studio in Amsterdam Jordaan. From €12/hour, discount packages up to 23% off."
+        url="/en/pricing"
+        priceRange="From €12/hour"
+      />
+      <OfferCatalogJsonLd
+        catalogName="Open Gym Memberships"
+        description="Independent training in a private studio in Amsterdam Jordaan. 60-minute sessions, max 3 people."
+        url="/en/pricing"
+        recurring
+        offers={[
+          { name: "Starter Plan — 4 sessions", description: "4 sessions per 4 weeks, €7.25 per session", price: 29 },
+          { name: "Popular — 8 sessions", description: "8 sessions per 4 weeks, €6.13 per session", price: 49 },
+          { name: "Intensive — 12 sessions", description: "12 sessions per 4 weeks, €5.75 per session", price: 69 },
+          { name: "Unlimited", description: "Unlimited training per 4 weeks", price: 89 },
+        ]}
+      />
+      <OfferCatalogJsonLd
+        catalogName="Studio Rental Rates"
+        description="Rent a fully equipped personal training studio in Amsterdam Jordaan."
+        url="/en/pricing"
+        offers={[
+          { name: "Half studio — 60 min", description: "Half studio rental, 60 minutes", price: 12 },
+          { name: "Half studio — 90 min", description: "Half studio rental, 90 minutes", price: 17 },
+          { name: "Full studio — 60 min", description: "Full studio rental, 60 minutes", price: 17 },
+          { name: "Full studio — 90 min", description: "Full studio rental, 90 minutes", price: 24 },
+        ]}
+      />
 
       {/* Hero */}
       <Section>

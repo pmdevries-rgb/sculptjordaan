@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { acuityLinks } from "@/config/acuity";
-import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import {
   CreditCard,
   ArrowRight,
@@ -101,6 +101,47 @@ export default function PricingPageNL() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Prijzen","url":"/nl/prijzen"}]} />
+      <ServiceJsonLd
+        name="Personal Training"
+        description="Personal training in een privé studio in Amsterdam Jordaan. Gratis intake, trainers vanaf €45/sessie, 0% commissie."
+        url="/nl/prijzen"
+        priceRange="Vanaf €45/sessie"
+      />
+      <ServiceJsonLd
+        name="Open Gym"
+        description="Zelfstandig trainen in een privé studio in Amsterdam Jordaan. Sessies van 60 min, max 3 personen. Vanaf €29/4 weken."
+        url="/nl/prijzen"
+        priceRange="€29–€89/4 weken"
+      />
+      <ServiceJsonLd
+        name="Studio Verhuur"
+        description="Huur een volledig uitgeruste personal training studio in Amsterdam Jordaan. Vanaf €12/uur, kortingspakketten tot 23% korting."
+        url="/nl/prijzen"
+        priceRange="Vanaf €12/uur"
+      />
+      <OfferCatalogJsonLd
+        catalogName="Open Gym Abonnementen"
+        description="Zelfstandig trainen in een privé studio in Amsterdam Jordaan. Sessies van 60 min, max 3 personen."
+        url="/nl/prijzen"
+        recurring
+        offers={[
+          { name: "Instapplan — 4 sessies", description: "4 sessies per 4 weken, €7,25 per sessie", price: 29 },
+          { name: "Populair — 8 sessies", description: "8 sessies per 4 weken, €6,13 per sessie", price: 49 },
+          { name: "Intensief — 12 sessies", description: "12 sessies per 4 weken, €5,75 per sessie", price: 69 },
+          { name: "Onbeperkt", description: "Onbeperkt trainen per 4 weken", price: 89 },
+        ]}
+      />
+      <OfferCatalogJsonLd
+        catalogName="Studio Verhuur Tarieven"
+        description="Huur een volledig uitgeruste personal training studio in Amsterdam Jordaan."
+        url="/nl/prijzen"
+        offers={[
+          { name: "Halve studio — 60 min", description: "Halve studio huur, 60 minuten", price: 12 },
+          { name: "Halve studio — 90 min", description: "Halve studio huur, 90 minuten", price: 17 },
+          { name: "Volledige studio — 60 min", description: "Volledige studio huur, 60 minuten", price: 17 },
+          { name: "Volledige studio — 90 min", description: "Volledige studio huur, 90 minuten", price: 24 },
+        ]}
+      />
 
       {/* Hero */}
       <Section>
