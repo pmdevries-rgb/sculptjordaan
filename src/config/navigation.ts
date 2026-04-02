@@ -142,9 +142,13 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/blog/sportschool-jordaan-amsterdam": "/en/blog/gym-jordaan-amsterdam",
   "/nl/blog/personal-training-afvallen-amsterdam": "/en/blog/personal-training-weight-loss-amsterdam",
   "/nl/blog/personal-trainer-amsterdam-west": "/en/blog/personal-trainer-amsterdam-west",
-  "/nl/blog/personal-trainer-amsterdam-centrum": "/en/blog/personal-trainer-amsterdam-centrum",  // EN → NL: pages
-  "/nl/blog/personal-trainer-de-pijp-amsterdam": "/en/blog/personal-trainer-de-pijp-amsterdam",  "/en": "/",
-  "/nl/blog/boutique-gym-vs-sportschool-keten": "/en/blog/boutique-gym-vs-big-chain-gym",  "/en/find-personal-trainer": "/nl/vind-jouw-personal-trainer",
+  "/nl/blog/personal-trainer-amsterdam-centrum": "/en/blog/personal-trainer-amsterdam-centrum",
+  "/nl/blog/personal-trainer-de-pijp-amsterdam": "/en/blog/personal-trainer-de-pijp-amsterdam",
+  "/nl/blog/boutique-gym-vs-sportschool-keten": "/en/blog/boutique-gym-vs-big-chain-gym",
+  "/nl/blog/personal-trainer-voor-beginners": "/en/blog/personal-trainer-for-beginners",
+  // EN → NL: pages
+  "/en": "/",
+  "/en/find-personal-trainer": "/nl/vind-jouw-personal-trainer",
   "/en/open-gym": "/nl/open-gym",
   "/en/studio-rental": "/nl/studio-huren",
   "/en/book": "/nl/boek",
@@ -195,6 +199,10 @@ export const alternateRoutes: Record<string, string> = {
   "/en/blog/gym-jordaan-amsterdam": "/nl/blog/sportschool-jordaan-amsterdam",
   "/en/blog/personal-training-weight-loss-amsterdam": "/nl/blog/personal-training-afvallen-amsterdam",
   "/en/blog/personal-trainer-amsterdam-west": "/nl/blog/personal-trainer-amsterdam-west",
-  "/en/blog/personal-trainer-amsterdam-centrum": "/nl/blog/personal-trainer-amsterdam-centrum",  // Campaign landing pages
-  "/en/blog/personal-trainer-de-pijp-amsterdam": "/nl/blog/personal-trainer-de-pijp-amsterdam",  "/en/free-intro": "/nl/gratis-intake",
-  "/en/blog/boutique-gym-vs-big-chain-gym": "/nl/blog/boutique-gym-vs-sportschool-keten",};
+  "/en/blog/personal-trainer-amsterdam-centrum": "/nl/blog/personal-trainer-amsterdam-centrum",
+  "/en/blog/personal-trainer-de-pijp-amsterdam": "/nl/blog/personal-trainer-de-pijp-amsterdam",
+  "/en/blog/boutique-gym-vs-big-chain-gym": "/nl/blog/boutique-gym-vs-sportschool-keten",
+  "/en/blog/personal-trainer-for-beginners": "/nl/blog/personal-trainer-voor-beginners",
+  // Campaign landing pages
+  "/en/free-intro": "/nl/gratis-intake",
+};
