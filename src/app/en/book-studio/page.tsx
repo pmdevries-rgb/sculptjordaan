@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/accordion";
 import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import { MessageCircle, CreditCard, Eye, Key, Repeat } from "lucide-react";
+import { MessageCircle, CreditCard, Eye, Key, Repeat, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
 
@@ -130,13 +130,13 @@ export default function BookStudioPageEN() {
                   <td className="px-4 py-3 font-medium">Half studio (1:1)</td>
                   <td className="px-4 py-3 text-center">
                     <span className="font-semibold">&euro;12</span>
-                    <ButtonLink href={acuityLinks.halfStudio60} size="sm" className="ml-2">
+                    <ButtonLink href={acuityLinks.halfStudio60} size="default" className="ml-2">
                       Book
                     </ButtonLink>
                   </td>
                   <td className="px-4 py-3 text-center">
                     <span className="font-semibold">&euro;17</span>
-                    <ButtonLink href={acuityLinks.halfStudio90} size="sm" className="ml-2">
+                    <ButtonLink href={acuityLinks.halfStudio90} size="default" className="ml-2">
                       Book
                     </ButtonLink>
                   </td>
@@ -145,13 +145,13 @@ export default function BookStudioPageEN() {
                   <td className="px-4 py-3 font-medium">Full studio (max 6)</td>
                   <td className="px-4 py-3 text-center">
                     <span className="font-semibold">&euro;17</span>
-                    <ButtonLink href={acuityLinks.fullStudio60} size="sm" className="ml-2">
+                    <ButtonLink href={acuityLinks.fullStudio60} size="default" className="ml-2">
                       Book
                     </ButtonLink>
                   </td>
                   <td className="px-4 py-3 text-center">
                     <span className="font-semibold">&euro;24</span>
-                    <ButtonLink href={acuityLinks.fullStudio90} size="sm" className="ml-2">
+                    <ButtonLink href={acuityLinks.fullStudio90} size="default" className="ml-2">
                       Book
                     </ButtonLink>
                   </td>
@@ -319,10 +319,14 @@ export default function BookStudioPageEN() {
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Ready to get started?</h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-white/70">
-              Scroll back up to book directly, or get in touch.
+              Book a studio session directly or get in touch.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <ButtonLink href={whatsappLinks.studioEn} size="lg" external>
+              <ButtonLink href={acuityLinks.fullStudio60} size="lg">
+                Book studio
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </ButtonLink>
+              <ButtonLink href={whatsappLinks.studioEn} variant="outline" size="lg" className="border-white/20 bg-transparent text-white hover:bg-white/10 dark:bg-transparent" external>
                 <MessageCircle className="mr-2 h-4 w-4" />
                 WhatsApp us
               </ButtonLink>

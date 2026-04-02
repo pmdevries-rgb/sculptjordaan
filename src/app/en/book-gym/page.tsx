@@ -55,6 +55,11 @@ export default function BookGymPageEN() {
             <ButtonLink href="/en/open-gym" size="lg" variant="outline" className="w-full sm:w-auto">View all plans</ButtonLink>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">From €7.25/session · Private studio · No contract · Daily 06:30–22:00</p>
+          <div className="mt-6 pt-4 border-t border-border/50">
+            <ButtonLink href={acuityLinks.openGymBook} size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">
+              Already a member? Book your session →
+            </ButtonLink>
+          </div>
         </div>
       </Section>
 
