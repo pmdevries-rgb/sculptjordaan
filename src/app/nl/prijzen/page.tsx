@@ -25,7 +25,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Prijzen — Personal Training, Open Gym & Studio Huur | SculptClub Amsterdam Jordaan",
   description:
-    "Overzicht van alle prijzen bij SculptClub Amsterdam. Personal training vanaf \u20ac45, Open Gym vanaf \u20ac29/4wk, studio huur vanaf \u20ac12/uur. Geen contract, geen verplichtingen.",
+    "Alle prijzen bij SculptClub Amsterdam. Personal training vanaf €45, Open Gym vanaf €29/4wk, studio huur vanaf €12/uur. Geen contract.",
   alternates: {
     canonical: "/nl/prijzen",
     languages: {

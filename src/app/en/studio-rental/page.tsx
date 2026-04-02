@@ -31,7 +31,7 @@ import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/jso
 export const metadata: Metadata = {
   title: "Studio Rental for Personal Trainers Amsterdam | SculptClub Jordaan",
   description:
-    "Rent a private training studio in Amsterdam Jordaan. Purpose-built for freelance personal trainers & physiotherapists. From €12/hour, no commission, flexible per session.",
+    "Rent a private training studio in Amsterdam Jordaan. For freelance PTs & physiotherapists. From €12/hour, no commission.",
   alternates: {
     canonical: "/en/studio-rental",
     languages: {
