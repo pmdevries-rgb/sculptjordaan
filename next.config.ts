@@ -31,9 +31,8 @@ const nextConfig: NextConfig = {
       { source: "/en/dara", destination: "/en/find-personal-trainer", permanent: true },
 
       // Common misspellings / old paths
-      { source: "/pricing", destination: "/nl/open-gym", permanent: true },
-      { source: "/prijzen", destination: "/nl/open-gym", permanent: true },
-      { source: "/en/pricing", destination: "/en/open-gym", permanent: true },
+      { source: "/pricing", destination: "/nl/prijzen", permanent: true },
+      { source: "/prijzen", destination: "/nl/prijzen", permanent: true },
       { source: "/schedule", destination: "/nl/boek", permanent: true },
       { source: "/en/schedule", destination: "/en/book", permanent: true },
       { source: "/gallery", destination: "/", permanent: true },
