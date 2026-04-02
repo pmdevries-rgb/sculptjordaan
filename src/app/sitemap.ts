@@ -46,6 +46,7 @@ const nlPages = [
   "/nl/boek-trainer",
   "/nl/boek-studio",
   "/nl/boek-gym",
+  "/nl/gratis-intake",
 ];
 
 const enPages = [
@@ -92,6 +93,7 @@ const enPages = [
   "/en/book-trainer",
   "/en/book-studio",
   "/en/book-gym",
+  "/en/free-intro",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
