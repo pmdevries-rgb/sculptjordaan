@@ -162,6 +162,16 @@ export default function BlogPostFysioStudioNL() {
               </p>
             </div>
 
+            <div className="mt-12 border-t border-border/50 pt-8">
+              <h3 className="text-lg font-bold mb-4">Meer lezen</h3>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <a href="/nl/word-trainer" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Word trainer bij SculptClub</p></a>
+                <a href="/nl/blog/studio-huren-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Studio huren als personal trainer</p></a>
+                <a href="/nl/blog/gym-huren-per-uur-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Gym huren per uur Amsterdam</p></a>
+                <a href="/nl/blog/fysiotherapeut-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Fysiotherapeut als personal trainer</p></a>
+              </div>
+            </div>
+
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Interesse in de studio voor je praktijk?</h3>
               <p className="text-muted-foreground mb-6">

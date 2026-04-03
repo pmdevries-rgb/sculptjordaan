@@ -174,6 +174,16 @@ export default function BlogPostGymHurenPerUur() {
                 De studio van SculptClub bevindt zich aan de Egelantiersgracht in de Jordaan, een van de meest centrale en goed bereikbare wijken van Amsterdam. Goed te bereiken met fiets, OV en auto. De rustige omgeving van de Jordaan past goed bij de privé sfeer van een boutique studio.
               </p>
 
+              <div className="mt-12 border-t border-border/50 pt-8">
+                <h3 className="text-lg font-bold mb-4">Meer lezen</h3>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <a href="/nl/word-trainer" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Word trainer bij SculptClub</p></a>
+                  <a href="/nl/blog/studio-huren-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Studio huren als personal trainer</p></a>
+                  <a href="/nl/blog/trainingsruimte-huren-zzp-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Trainingsruimte huren als ZZP-trainer</p></a>
+                  <a href="/nl/blog/fysiotherapie-studio-huren-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Fysiotherapie studio huren</p></a>
+                </div>
+              </div>
+
               <div className="mt-10 p-6 rounded-2xl bg-brand/5 border border-brand/20">
                 <h3 className="text-xl font-bold text-foreground mb-2">Klaar om te beginnen?</h3>
                 <p className="mb-4">
