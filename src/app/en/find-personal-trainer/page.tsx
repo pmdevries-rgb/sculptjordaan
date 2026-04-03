@@ -129,7 +129,7 @@ export default function TrainersPageEN() {
                     )}
                   </CardHeader>
 
-                  <CardContent className="flex-1 space-y-4">
+                  <CardContent className="flex-1 space-y-3">
                     <div className="flex flex-wrap gap-1.5">
                       {trainer.specialization.en.map((spec) => (
                         <Badge key={spec} variant="secondary">
@@ -138,11 +138,11 @@ export default function TrainersPageEN() {
                       ))}
                     </div>
 
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {trainer.bio.en}
                     </p>
 
-                    <div className="space-y-1 text-sm">
+                    <div className="space-y-0.5 text-sm">
                       <p>
                         <span className="text-muted-foreground">Languages:</span>{" "}
                         {trainer.languages.join(", ")}
@@ -154,7 +154,7 @@ export default function TrainersPageEN() {
                     </div>
                   </CardContent>
 
-                  <CardFooter>
+                  <CardFooter className="border-t-0 bg-transparent pt-2 pb-4">
                     <span className="inline-flex items-center justify-center w-full rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground">
                       Book free intro
                     </span>
