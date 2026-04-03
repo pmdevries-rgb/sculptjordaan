@@ -10,28 +10,28 @@ export function CtaBand({ locale }: { locale: Locale }) {
   const t =
     locale === "nl"
       ? {
-          title: "Klaar om te beginnen?",
+          title: "Probeer het gratis",
           description:
-            "Kies hoe je wilt trainen. Elke optie start met een gratis kennismaking.",
+            "Elke optie begint zonder kosten. Geen abonnement, geen verplichtingen.",
           options: [
             {
               icon: Users,
-              label: "Gratis intake met een trainer",
-              description: "45 min kennismaking — vrijblijvend",
+              label: "Intake met een trainer",
+              description: "45 min · gratis · vrijblijvend",
               href: "/nl/boek-trainer",
               external: false,
             },
             {
               icon: Dumbbell,
-              label: "Gratis proefles Open Gym",
-              description: "60 min zelf trainen — geen kosten",
+              label: "Proefles Open Gym",
+              description: "60 min · gratis · zelf trainen",
               href: acuityLinks.openGymTrial,
               external: true,
             },
             {
               icon: Building2,
-              label: "Gratis proefles Studio Huren",
-              description: "60 min de studio uitproberen",
+              label: "Proefles Studio Huren",
+              description: "60 min · gratis · studio bekijken",
               href: acuityLinks.studioTrial,
               external: true,
             },
@@ -39,28 +39,28 @@ export function CtaBand({ locale }: { locale: Locale }) {
           whatsapp: "Liever direct contact? WhatsApp ons",
         }
       : {
-          title: "Ready to start?",
+          title: "Try it free",
           description:
-            "Choose how you want to train. Every option starts with a free introduction.",
+            "Every option starts at zero cost. No membership, no obligations.",
           options: [
             {
               icon: Users,
-              label: "Free intro with a trainer",
-              description: "45 min meet & greet — no obligation",
+              label: "Intro with a trainer",
+              description: "45 min · free · no obligation",
               href: "/en/book-trainer",
               external: false,
             },
             {
               icon: Dumbbell,
-              label: "Free Open Gym trial",
-              description: "60 min solo training — no cost",
+              label: "Open Gym trial",
+              description: "60 min · free · train solo",
               href: acuityLinks.openGymTrial,
               external: true,
             },
             {
               icon: Building2,
-              label: "Free Studio Rental trial",
-              description: "60 min try the studio",
+              label: "Studio Rental trial",
+              description: "60 min · free · see the studio",
               href: acuityLinks.studioTrial,
               external: true,
             },

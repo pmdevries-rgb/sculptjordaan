@@ -7,41 +7,41 @@ const steps = {
   nl: [
     {
       step: "01",
-      title: "Kies je pad",
+      title: "Boek online",
       description:
-        "Personal Training, Open Gym of Studio Huren — kies wat bij jou past. Plan een gratis intake of boek direct.",
+        "Kies een trainer, een Open Gym slot of een studiosessie. Boek in 2 minuten via onze website.",
     },
     {
       step: "02",
-      title: "Start met trainen",
+      title: "Krijg je deurcode",
       description:
-        "Ontvang je persoonlijke deurcode en begin met trainen. Privé, professioneel, op jouw schema.",
+        "De avond ervoor ontvang je een unieke deurcode via WhatsApp. Geen receptie, geen wachten.",
     },
     {
       step: "03",
-      title: "Zie resultaat",
+      title: "Train privé",
       description:
-        "Consistentie in een omgeving die voor jou werkt. Geen drukte, geen wachten, puur focus op jouw doel.",
+        "Loop naar binnen en begin. Alleen jij, je trainer of je training. Annuleren kan altijd gratis.",
     },
   ],
   en: [
     {
       step: "01",
-      title: "Choose your path",
+      title: "Book online",
       description:
-        "Personal Training, Open Gym or Studio Rental — choose what suits you. Book a free intro or start directly.",
+        "Choose a trainer, an Open Gym slot or a studio session. Book in 2 minutes via our website.",
     },
     {
       step: "02",
-      title: "Start training",
+      title: "Get your door code",
       description:
-        "Receive your personal door code and start training. Private, professional, on your schedule.",
+        "The evening before, you receive a unique door code via WhatsApp. No reception, no waiting.",
     },
     {
       step: "03",
-      title: "See results",
+      title: "Train privately",
       description:
-        "Consistency in an environment that works for you. No crowds, no waiting, pure focus on your goal.",
+        "Walk in and start. Just you, your trainer or your workout. Cancellation is always free.",
     },
   ],
 };
