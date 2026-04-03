@@ -40,8 +40,8 @@ export function Hero({ locale }: { locale: Locale }) {
       {/* Background image with strong dark overlay for text readability */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero/gym-entrance.jpeg"
-          alt="SculptClub private personal training studio entrance on the Egelantiersgracht in Amsterdam Jordaan"
+          src="/images/studio/studio-interior-1.jpeg"
+          alt="SculptClub private personal training studio interior with professional equipment in Amsterdam Jordaan"
           fill
           className="object-cover"
           sizes="100vw"
