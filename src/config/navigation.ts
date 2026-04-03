@@ -149,6 +149,8 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/blog/personal-trainer-amsterdam-oost": "/en/blog/personal-trainer-amsterdam-east",
   "/nl/blog/personal-trainer-na-blessure-amsterdam": "/en/blog/personal-trainer-after-injury-amsterdam",
   "/nl/blog/krachttraining-voor-vrouwen": "/en/blog/strength-training-for-women",
+  "/nl/blog/personal-trainer-amsterdam-zuid": "/en/blog/personal-trainer-amsterdam-south",
+  "/nl/blog/personal-trainer-voor-senioren-amsterdam": "/en/blog/personal-trainer-for-seniors-amsterdam",
   // EN → NL: pages
   "/en": "/",
   "/en/find-personal-trainer": "/nl/vind-jouw-personal-trainer",
@@ -209,6 +211,8 @@ export const alternateRoutes: Record<string, string> = {
   "/en/blog/personal-trainer-amsterdam-east": "/nl/blog/personal-trainer-amsterdam-oost",
   "/en/blog/personal-trainer-after-injury-amsterdam": "/nl/blog/personal-trainer-na-blessure-amsterdam",
   "/en/blog/strength-training-for-women": "/nl/blog/krachttraining-voor-vrouwen",
+  "/en/blog/personal-trainer-amsterdam-south": "/nl/blog/personal-trainer-amsterdam-zuid",
+  "/en/blog/personal-trainer-for-seniors-amsterdam": "/nl/blog/personal-trainer-voor-senioren-amsterdam",
   // Campaign landing pages
   "/en/free-intro": "/nl/gratis-intake",
 };

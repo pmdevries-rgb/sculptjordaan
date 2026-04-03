@@ -245,6 +245,22 @@ const posts = [
     href: "/en/blog/strength-training-for-women",
     date: "April 3, 2026",
   },
+  {
+    title: "Personal Trainer Amsterdam South",
+    excerpt:
+      "Live in Amsterdam South? SculptClub in the Jordaan is a 10-minute bike ride. Private studio, no membership.",
+    category: "Local",
+    href: "/en/blog/personal-trainer-amsterdam-south",
+    date: "April 3, 2026",
+  },
+  {
+    title: "Personal Trainer for Seniors in Amsterdam",
+    excerpt:
+      "Stay fit and strong as you age. A personal trainer helps seniors train safely and effectively.",
+    category: "Training",
+    href: "/en/blog/personal-trainer-for-seniors-amsterdam",
+    date: "April 3, 2026",
+  },
 ];
 
 export default function BlogPageEN() {

@@ -245,6 +245,22 @@ const posts = [
     href: "/nl/blog/krachttraining-voor-vrouwen",
     date: "3 april 2026",
   },
+  {
+    title: "Personal Trainer Amsterdam Zuid",
+    excerpt:
+      "Woon je in Amsterdam Zuid? SculptClub in de Jordaan is 10 minuten fietsen. Privé studio, geen abonnement.",
+    category: "Lokaal",
+    href: "/nl/blog/personal-trainer-amsterdam-zuid",
+    date: "3 april 2026",
+  },
+  {
+    title: "Personal Trainer voor Senioren in Amsterdam",
+    excerpt:
+      "Fit en sterk blijven op latere leeftijd? Een personal trainer helpt senioren veilig en effectief trainen.",
+    category: "Training",
+    href: "/nl/blog/personal-trainer-voor-senioren-amsterdam",
+    date: "3 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {
