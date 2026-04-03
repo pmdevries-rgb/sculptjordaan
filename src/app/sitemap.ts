@@ -43,6 +43,8 @@ const nlPages = [
   "/nl/blog/boutique-gym-vs-sportschool-keten",
   "/nl/blog/personal-trainer-voor-beginners",
   "/nl/blog/personal-trainer-amsterdam-oost",
+  "/nl/blog/personal-trainer-na-blessure-amsterdam",
+  "/nl/blog/krachttraining-voor-vrouwen",
   "/nl/prijzen",
   "/nl/algemene-voorwaarden",
   "/nl/privacybeleid",
@@ -56,6 +58,7 @@ const nlPages = [
   "/nl/boek-trainer",
   "/nl/boek-studio",
   "/nl/boek-gym",
+  "/nl/gratis-intake",
 ];
 
 const enPages = [
@@ -99,6 +102,8 @@ const enPages = [
   "/en/blog/boutique-gym-vs-big-chain-gym",
   "/en/blog/personal-trainer-for-beginners",
   "/en/blog/personal-trainer-amsterdam-east",
+  "/en/blog/personal-trainer-after-injury-amsterdam",
+  "/en/blog/strength-training-for-women",
   "/en/pricing",
   "/en/terms-conditions",
   "/en/privacy-policy",
@@ -112,6 +117,7 @@ const enPages = [
   "/en/book-trainer",
   "/en/book-studio",
   "/en/book-gym",
+  "/en/free-intro",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
