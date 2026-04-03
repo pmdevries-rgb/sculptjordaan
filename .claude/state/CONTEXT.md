@@ -1,11 +1,11 @@
-ORIENT: SculptClub is a bilingual (NL/EN) personal training studio website for Amsterdam Jordaan. State: main branch, 28 NL + 28 EN blog posts, 114 sitemap URLs, all deployed live. Goal: maximize new users + perfect UX.
+ORIENT: SculptClub is a bilingual (NL/EN) personal training studio website + trainer acquisition platform for Amsterdam Jordaan. State: main branch, 32 NL + 32 EN blog posts, 122+ sitemap URLs, all deployed live. Goal: maximize new users + attract trainers.
 
 ## Session Handoff
 Mode: god
-Objective: Continuous improvement — SEO, UX, growth, design, analytics
-Progress: 28+ tasks shipped across multiple sessions. SEO content (16 blog posts), structured data (OfferCatalog), funnel optimization (6 personas), design polish (button sizing, contrast), growth audit (trust signals, review CTA, UTM tracking), neighbourhood coverage (Jordaan, West, Centrum, De Pijp, Oost). Latest: 2 new blog pairs (krachttraining vrouwen + PT na blessure), 8 cross-links, sitemap fixes (added gratis-intake + free-intro), fixed self-link in EN beginners guide.
-Next actions: More blog content (personal trainer senioren, sportschool amsterdam zuid), mobile responsiveness audit, image optimization, consider adding blog index page pagination.
-Human actions pending: Google Search Console sitemap submission, Google Ads conversion import, local directory submissions, rich results check, real testimonials, referral programme.
-Open questions: Google Maps Place ID for direct review link (currently uses Maps URL).
-Momentum: Deploy pipeline working (git push main → Vercel auto-deploys). All tracking pixels verified live (GA4, Google Ads, Meta, Clarity, TikTok).
+Objective: Continuous improvement — SEO, UX, growth, design, trainer acquisition
+Progress: 35+ tasks shipped across sessions. Today: hero image swapped to dark interior, prefers-reduced-motion CSS fallback, 3 NL cross-links added, full Chrome MCP audit (zero errors, mobile OK). Previous: trainer acquisition funnel (word-trainer + become-trainer landing pages), 8 blog post pairs, 40+ cross-links, blog index updates, footer nav updated with trainer links.
+Next actions: Trainer matching quiz/filter on trainers page, richer trainer profiles (availability, reviews), dynamic blog index (currently hardcoded), image optimization (WebP), more EN cross-links on newer posts.
+Human actions pending: Acuity Scheduling brand customization, Google Search Console sitemap, Google Ads conversion import, local directories, rich results check, real testimonials, referral programme.
+Open questions: Google Maps Place ID for direct review link.
+Momentum: Deploy pipeline = git push + manual `vercel deploy --prod` (auto-deploy from GitHub not triggering). All tracking pixels verified live.
 <!-- handoff: 2026-04-03 -->
