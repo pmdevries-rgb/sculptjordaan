@@ -64,24 +64,74 @@ export function Analytics() {
               var p = window.location.pathname;
               return FREE_INTRO_PAGES.some(function(s) { return p.startsWith(s); });
             }
+            function detectBookingType(href) {
+              if (href.includes('id=2155887') || href.includes('id=2155888') || href.includes('id=2155889') || href.includes('id=2155890')) return { type: 'open_gym', value: 49 };
+              if (href.includes('id=2149357')) return { type: 'studio_pack_starter', value: 89 };
+              if (href.includes('id=2149358')) return { type: 'studio_pack_routine', value: 199 };
+              if (href.includes('id=2149360')) return { type: 'studio_pack_volume', value: 549 };
+              if (href.includes('appointmentType=84032351') || href.includes('appointmentType=86677323') || href.includes('appointmentType=82553655') || href.includes('appointmentType=85410115')) return { type: 'studio_rental', value: 12 };
+              if (href.includes('appointmentType=83513953')) return { type: 'open_gym_session', value: 7 };
+              if (href.includes('appointmentType=87017445') || href.includes('appointmentType=86758291')) return { type: 'trial', value: 0 };
+              return { type: 'generic', value: 0 };
+            }
             document.addEventListener('click', function(e) {
               var el = e.target.closest('a[href]');
               if (el && el.href && el.href.includes('acuityscheduling.com')) {
                 var isIntake = isFreeIntroPage();
+                var booking = detectBookingType(el.href);
                 if (typeof gtag === 'function') {
-                  gtag('event', 'conversion', { send_to: '${googleAds}/${googleAdsConversion}' });
+                  gtag('event', 'conversion', {
+                    send_to: '${googleAds}/${googleAdsConversion}',
+                    value: booking.value,
+                    currency: 'EUR'
+                  });
+                  gtag('event', 'begin_checkout', {
+                    booking_type: booking.type,
+                    value: booking.value,
+                    currency: 'EUR',
+                    booking_source: window.location.pathname
+                  });
                   if (isIntake) {
-                    gtag('event', 'free_intake_click', { booking_source: window.location.pathname });
+                    gtag('event', 'free_intake_click', {
+                      booking_source: window.location.pathname,
+                      value: 45,
+                      currency: 'EUR'
+                    });
                   }
                 }
                 if (typeof fbq === 'function') {
-                  fbq('track', isIntake ? 'Lead' : 'InitiateCheckout');
+                  fbq('track', isIntake ? 'Lead' : 'InitiateCheckout', {
+                    value: booking.value || 45,
+                    currency: 'EUR',
+                    content_name: booking.type
+                  });
                 }
                 if (typeof ttq !== 'undefined') {
-                  ttq.track(isIntake ? 'SubmitForm' : 'AddToCart');
+                  ttq.track(isIntake ? 'SubmitForm' : 'AddToCart', {
+                    value: booking.value,
+                    currency: 'EUR'
+                  });
                 }
               }
             }, true);
+          })();
+        `}
+      </Script>
+
+      {/* Google Ads remarketing — page category signals for audience building */}
+      <Script id="gads-remarketing" strategy="afterInteractive">
+        {`
+          (function() {
+            if (typeof gtag !== 'function') return;
+            var p = window.location.pathname;
+            var cat = 'visitor';
+            if (p.includes('/vind-jouw-personal-trainer') || p.includes('/find-personal-trainer')) cat = 'trainer_seeker';
+            else if (p.includes('/open-gym') || p.includes('/boek-gym') || p.includes('/book-gym')) cat = 'gym_prospect';
+            else if (p.includes('/studio-huren') || p.includes('/studio-rental') || p.includes('/word-trainer') || p.includes('/become-trainer')) cat = 'studio_renter';
+            else if (p.includes('/prijzen') || p.includes('/pricing')) cat = 'pricing_viewer';
+            else if (p.includes('/plan-gratis-intake') || p.includes('/plan-free-intro') || p.includes('/gratis-intake') || p.includes('/free-intro')) cat = 'intake_page';
+            else if (p.includes('/blog/')) cat = 'blog_reader';
+            gtag('event', 'page_category', { page_category: cat, page_path: p });
           })();
         `}
       </Script>
