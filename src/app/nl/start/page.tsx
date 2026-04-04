@@ -22,16 +22,16 @@ const paths = [
   {
     icon: Users,
     title: "Ik zoek een personal trainer",
-    description: "Vind een trainer die bij jouw doelen past. De eerste intake is 100% gratis.",
+    description: "Vind een trainer die bij jouw doelen past. De eerste intake is 100% gratis. Vanaf \u20ac45/sessie daarna.",
     cta: "Boek gratis intake",
-    href: "/nl/gratis-intake",
+    href: "/nl/gratis-intake?utm_source=instagram&utm_medium=bio&utm_campaign=start",
     external: false,
     highlight: "Eerste sessie gratis",
   },
   {
     icon: Dumbbell,
     title: "Ik wil zelfstandig trainen",
-    description: "Boek 60-min slots in een privé studio. Max 3 personen. Geen abonnement nodig.",
+    description: "Boek 60-min slots in een priv\u00e9 studio. Max 3 personen. Vanaf \u20ac5,75/sessie, geen abonnement.",
     cta: "Probeer Open Gym gratis",
     href: acuityLinks.openGymTrial,
     external: true,
@@ -40,7 +40,7 @@ const paths = [
   {
     icon: Building2,
     title: "Ik ben trainer en zoek een studio",
-    description: "Huur onze volledig uitgeruste studio voor jouw cli\u00ebnten. 0% commissie. Jouw tarief, jouw planning.",
+    description: "Volledig uitgeruste priv\u00e9 studio voor jouw cli\u00ebnten. 0% commissie. Vanaf \u20ac12/uur.",
     cta: "Boek gratis rondleiding",
     href: acuityLinks.studioTrial,
     external: true,
@@ -144,23 +144,12 @@ export default function StartPageNL() {
             rel="noopener noreferrer"
             className="text-brand hover:underline font-medium"
           >
-            Stuur ons een WhatsApp \u2192
+            Stuur ons een WhatsApp &rarr;
           </a>
         </p>
 
-        {/* Studio photo */}
-        <div className="mt-12 rounded-2xl overflow-hidden aspect-video relative shadow-xl">
-          <Image
-            src="/images/studio/studio-interior-1.jpeg"
-            alt="SculptClub privé studio in de Jordaan, Amsterdam"
-            fill
-            className="object-cover"
-            sizes="(max-width: 672px) 100vw, 672px"
-          />
-        </div>
-
-        {/* Trust items */}
-        <div className="mt-8 grid grid-cols-3 gap-3">
+        {/* Trust items — above photo so visible on mobile */}
+        <div className="mt-10 grid grid-cols-3 gap-3">
           {trustItems.map((item) => (
             <div
               key={item.text}
@@ -174,8 +163,19 @@ export default function StartPageNL() {
           ))}
         </div>
 
-        {/* Quick info */}
-        <div className="mt-10 text-center text-sm text-muted-foreground">
+        {/* Studio photo */}
+        <div className="mt-8 rounded-2xl overflow-hidden aspect-video relative shadow-xl">
+          <Image
+            src="/images/studio/studio-overview.jpeg"
+            alt="SculptClub priv&#233; studio in de Jordaan, Amsterdam"
+            fill
+            className="object-cover"
+            sizes="(max-width: 672px) 100vw, 672px"
+          />
+        </div>
+
+        {/* Address */}
+        <div className="mt-6 text-center text-sm text-muted-foreground">
           <p>Egelantiersgracht 424, Amsterdam Jordaan</p>
         </div>
       </main>
