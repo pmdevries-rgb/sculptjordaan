@@ -34,4 +34,12 @@
 - [👤] `P2` CONFIGURE Check Rich Results in Search Console — `platform:google-search-console` [id:gsc-rich-results]
 - [👤] `P2` COLLECT Real client testimonials for /resultaten — `platform:manual` [id:real-testimonials]
 - [👤] `P2` DESIGN Referral programme — `platform:manual` [id:referral-programme]
+- [x] `P0` ADS Create Google Ads account + apply NL promo (€400 free credit activated) — `platform:google-ads` [id:gads-setup]
+- [x] `P0` ADS Set up PMax campaign (€5/day, 8 themes, Amsterdam, NL+EN) — `platform:google-ads` [id:gads-campaign]
+- [x] `P0` ADS Update Google Ads tag to AW-18011741633 — `src/config/site.ts` [id:gads-tag-update]
+- [👤] `P0` ADS Verify payment method in Google Ads to go live — `platform:google-ads` [id:gads-payment]
+- [👤] `P1` ADS Set up Meta Business Manager + verify pixel — `platform:meta-ads` [id:meta-setup]
+- [👤] `P1` ADS Create Instagram campaign — `platform:meta-ads` [id:meta-campaign]
+- [👤] `P1` ADS TikTok bio + organic posting 2-3x/week — `platform:tiktok` [id:tiktok-organic]
+- [👤] `P2` ADS Create Lookalike Audience in Meta — `platform:meta-ads` [id:meta-lookalike]
 ## Blocked
