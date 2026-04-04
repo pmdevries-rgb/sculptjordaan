@@ -83,6 +83,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.lang=location.pathname.startsWith("/en")?"en":"nl"`,
+          }}
+        />
         <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
