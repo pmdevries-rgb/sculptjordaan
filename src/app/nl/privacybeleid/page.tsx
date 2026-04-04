@@ -205,8 +205,12 @@ export default function PrivacyPageNL() {
                 Pixel, geanonimiseerd).
               </li>
               <li>
+                <strong>Microsoft Clarity:</strong> sessie-opnames en heatmaps
+                (geanonimiseerd, geen persoonlijke gegevens vastgelegd).
+              </li>
+              <li>
                 <strong>Hostingproviders:</strong> voor het hosten van onze
-                website.
+                website (Vercel).
               </li>
             </ul>
             <p className="text-muted-foreground mt-4">
