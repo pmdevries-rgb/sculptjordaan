@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
-import { Star, ArrowRight, Dumbbell, Users, Building2, MapPin, Clock, Shield } from "lucide-react";
+import { StartPathCard } from "@/components/marketing/start-path-card";
+import { Star, MapPin, Clock, Shield } from "lucide-react";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 const paths = [
   {
-    icon: Users,
+    icon: "Users" as const,
     title: "Ik zoek een personal trainer",
     description: "Vind een trainer die bij jouw doelen past. De eerste intake is 100% gratis. Vanaf \u20ac45/sessie daarna.",
     cta: "Boek gratis intake",
@@ -30,7 +30,7 @@ const paths = [
     highlight: "Eerste sessie gratis",
   },
   {
-    icon: Dumbbell,
+    icon: "Dumbbell" as const,
     title: "Ik wil zelfstandig trainen",
     description: "Boek 60-min slots in een priv\u00e9 studio. Max 3 personen. Vanaf \u20ac5,75/sessie, geen abonnement.",
     cta: "Probeer Open Gym gratis",
@@ -39,7 +39,7 @@ const paths = [
     highlight: "Gratis proefles",
   },
   {
-    icon: Building2,
+    icon: "Building2" as const,
     title: "Ik ben trainer en zoek een studio",
     description: "Volledig uitgeruste priv\u00e9 studio voor jouw cli\u00ebnten. 0% commissie. Vanaf \u20ac12/uur.",
     cta: "Boek gratis rondleiding",
@@ -81,47 +81,11 @@ export default function StartPageNL() {
             </div>
           </div>
 
-          {/* Three audience paths — no animation delay */}
+          {/* Three audience paths — tracked via StartPathCard */}
           <div className="grid gap-4">
-            {paths.map((path) => {
-              const content = (
-                <div className="group relative flex items-start gap-4 p-5 rounded-2xl border border-border/50 bg-secondary hover:border-brand/50 hover:bg-secondary/80 transition-all cursor-pointer">
-                  <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center shrink-0">
-                    <path.icon className="w-6 h-6 text-brand" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1 pr-20 sm:pr-24">
-                      <h2 className="font-bold text-lg leading-tight">{path.title}</h2>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                      {path.description}
-                    </p>
-                    <span className="inline-flex items-center gap-1.5 text-brand font-semibold text-sm group-hover:gap-2.5 transition-all">
-                      {path.cta}
-                      <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </div>
-                  <span className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider text-brand bg-brand/10 px-2 py-0.5 rounded-full">
-                    {path.highlight}
-                  </span>
-                </div>
-              );
-
-              return path.external ? (
-                <a
-                  key={path.title}
-                  href={path.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {content}
-                </a>
-              ) : (
-                <Link key={path.title} href={path.href}>
-                  {content}
-                </Link>
-              );
-            })}
+            {paths.map((path) => (
+              <StartPathCard key={path.title} {...path} />
+            ))}
           </div>
 
           {/* WhatsApp fallback */}
